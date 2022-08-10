@@ -1,4 +1,3 @@
-local GuiService = game:GetService("GuiService")
 if game.PlaceId == 9498006165 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
     local Window = OrionLib:MakeWindow({Name = "bo's script|Tapping Simulator!|", HidePremium = false, IntroText = "Bo's Script Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
@@ -342,7 +341,6 @@ autofarm:AddToggle({
 
 --upgrades toggles
 
-
 Upgrades:AddToggle({
 	Name = "Ore pay upgrade",
 	Default = false,
@@ -473,7 +471,7 @@ eggs:AddToggle({
 	end    
 })
 
-local world5 = eggs:AddSection({
+local world6 = eggs:AddSection({
 	Name = "Jungle"
 })
 
@@ -486,7 +484,7 @@ eggs:AddToggle({
 	end    
 })
 
-local world6 = eggs:AddSection({
+local world7 = eggs:AddSection({
 	Name = "Volcano"
 })
 
@@ -499,7 +497,7 @@ eggs:AddToggle({
 	end    
 })
 
-local world7 = eggs:AddSection({
+local world8 = eggs:AddSection({
 	Name = "Space"
 })
 
@@ -512,7 +510,7 @@ eggs:AddToggle({
 	end    
 })
 
-local world8 = eggs:AddSection({
+local world9 = eggs:AddSection({
 	Name = "Undead Forest"
 })
 
@@ -525,7 +523,7 @@ eggs:AddToggle({
 	end    
 })
 
-local world8 = eggs:AddSection({
+local world10 = eggs:AddSection({
 	Name = "Heaven"
 })
 
@@ -538,7 +536,7 @@ eggs:AddToggle({
 	end    
 })
 
-local world9 = eggs:AddSection({
+local world11 = eggs:AddSection({
 	Name = "Hell Dungeon"
 })
 
@@ -550,6 +548,68 @@ eggs:AddToggle({
         Eggs13()
 	end    
 })
+
+OrionLib:Init()
+
+elseif game.PlaceId == 10108131074 then
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    local Window = OrionLib:MakeWindow({Name = "bo's script|Mow The Lawn!|", HidePremium = false, IntroText = "Bo's Script Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
+
+    --values
+    _G.autoMowlawn = true
+    _G.AutoRefill = true
+
+    --functions
+
+function AutoRefill()
+    while _G.AutoRefill == true do
+        local args = {
+            [1] = workspace.Map.Zones:FindFirstChild("1"):FindFirstChild("1").GasStation.GasPumps,
+            [2] = true
+        }
+        game:GetService("ReplicatedStorage").Remotes.Game.ClientToggleUseGasStation:FireServer(unpack(args))        
+        wait()
+    end
+end
+
+function autoMowlawn()
+    while _G.autoMowlawn == true do
+        local args = {
+            [1] = "1"
+        }
+        game:GetService("ReplicatedStorage").Remotes.Game.ClientMowGrass:FireServer(unpack(args))
+        wait()        
+    end
+end
+
+    --tabs
+
+    local Autofarm = Window:MakeTab({
+        Name = "AutoFarm",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+    
+
+    --toggles
+
+    Autofarm:AddToggle({
+        Name = "Auto Mown Lawn",
+        Default = false,
+        Callback = function(Value)
+            _G.autoMowlawn = Value
+            autoMowlawn()
+        end    
+    })
+
+    Autofarm:AddToggle({
+        Name = "Auto FIll",
+        Default = false,
+        Callback = function(Value)
+            _G.AutoRefill = Value
+            AutoRefill()
+        end    
+    })
 
 OrionLib:Init()
 
