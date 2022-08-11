@@ -1,6 +1,6 @@
 if game.PlaceId == 9498006165 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "bo's script|Tapping Simulator!|", HidePremium = false, IntroText = "Bo's Script Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
+    local Window = OrionLib:MakeWindow({Name = "bo's script|Tapping Simulator!|", HidePremium = false, IntroText = "Bo's Script Hub", SaveConfig = false, ConfigFolder = "OrionTest"})
 
     --values
     _G.autoclick = true
@@ -47,11 +47,22 @@ end
         end    
     })
     
+
+    setclipboard("https://discord.gg/k9a4zym5uG")
+
+    OrionLib:MakeNotification({
+        Name = "Join Discord",
+        Content = "Join the Discord Copied in your clip Board",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+    
+
 OrionLib:Init()
 
 elseif game.PlaceId == 8884334497 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "bo's script |Mining Clicker Simulator|", HidePremium = false,IntroText = "Bo's Script Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
+    local Window = OrionLib:MakeWindow({Name = "bo's script |Mining Clicker Simulator|", HidePremium = false,IntroText = "Bo's Script Hub", SaveConfig = false, ConfigFolder = "OrionTest"})
 
     --auto farm
 _G.autoclicker = true
@@ -549,11 +560,21 @@ eggs:AddToggle({
 	end    
 })
 
+setclipboard("https://discord.gg/k9a4zym5uG")
+
+OrionLib:MakeNotification({
+    Name = "Join Discord",
+    Content = "Join the Discord Copied in your clip Board",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+
 OrionLib:Init()
 
 elseif game.PlaceId == 10108131074 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "bo's script|Mow The Lawn!|", HidePremium = false, IntroText = "Bo's Script Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
+    local Window = OrionLib:MakeWindow({Name = "bo's script|Mow The Lawn!|", HidePremium = false, IntroText = "Bo's Script Hub", SaveConfig = false, ConfigFolder = "OrionTest"})
 
     --values
     _G.autoMowlawn = true
@@ -694,7 +715,7 @@ OrionLib:Init()
 
 elseif game.PlaceId == 183364845 then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "bo's script|Speed Run 4|", HidePremium = false, IntroText = "Bo's Script Hub", SaveConfig = true, ConfigFolder = "OrionTest"})
+    local Window = OrionLib:MakeWindow({Name = "bo's script|Speed Run 4|", HidePremium = false, IntroText = "Bo's Script Hub", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 --values
 _G.GetAllLvls = true
@@ -832,6 +853,15 @@ Dimension:AddButton({
         }
         game:GetService("ReplicatedStorage").SetDimension:FireServer(unpack(args))
   	end 
+})
+
+setclipboard("https://discord.gg/k9a4zym5uG")
+
+OrionLib:MakeNotification({
+    Name = "Join Discord",
+    Content = "Join the Discord Copied in your clip Board",
+    Image = "rbxassetid://4483345998",
+    Time = 5
 })
 
 OrionLib:Init()    
