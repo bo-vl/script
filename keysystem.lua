@@ -8,11 +8,11 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-_G.key = "Hi"
+_G.key = "FirstRelease"
 _G.KeyInput = "string"
 
 function KeyCheck()
-    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/ScriptHub.lua")
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/script.lua")
 end
 
 function Destroy()
