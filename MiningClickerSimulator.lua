@@ -4,6 +4,9 @@ local Window = OrionLib:MakeWindow({Name = "bo's script Hub |Mining Clicker Simu
 --auto farm
 _G.autoclicker = true
 _G.autorebirth = true
+_G.AutoClaimReward1 = true
+_G.AutoClaimReward2 = true
+_G.AutoClaimReward3 = true
 
 --upgrades values
 _G.speedupgrade = true
@@ -27,7 +30,38 @@ _G.Eggs11 = true
 _G.Eggs12 = true
 _G.Eggs13 = true
 
---autofarm functinos
+--autofarm functions
+
+function UnlockZone()
+    while _G.AutoClaimReward3 == true do
+        local args = {
+            [1] = "unlockArea"
+        }
+        game:GetService("ReplicatedStorage").Remotes.claimAchievment:FireServer(unpack(args))
+        wait()
+    end
+end
+
+function HatchEgg()
+    while _G.AutoClaimReward2 == true do
+        local args = {
+            [1] = "hatchEgg"
+        }
+        game:GetService("ReplicatedStorage").Remotes.claimAchievment:FireServer(unpack(args))
+        wait()
+    end
+end
+
+function MineOre()
+    while _G.AutoClaimReward1 == true do
+        local args = {
+            [1] = "mineOre"
+        }
+        game:GetService("ReplicatedStorage").Remotes.claimAchievment:FireServer(unpack(args))
+        wait()
+    end
+end
+
 function autoclicker()
 while _G.autoclicker == true do
     game:GetService("ReplicatedStorage").Remotes.Click:InvokeServer()
@@ -261,8 +295,9 @@ PremiumOnly = false
 
 --autofarm toggles
 
+
 local autofarm1 = autofarm:AddSection({
-    Name = "Auto click"
+    Name = "Auto Farm"
 })
 
 autofarm:AddToggle({
@@ -274,10 +309,6 @@ Callback = function(Value)
 end    
 })
 
-local autofarm2 = autofarm:AddSection({
-    Name = "auto Rebirth"
-})
-
 autofarm:AddToggle({
 Name = "Rebirth",
 Default = false,
@@ -285,6 +316,19 @@ Callback = function(Value)
     _G.autorebirth = Value
     autorebirth()
 end    
+})
+
+autofarm:AddToggle({
+    Name = "Auto Claim Reward",
+    Default = false,
+    Callback = function(Value)
+        _G.AutoClaimReward2 = Value
+        _G.AutoClaimReward3 = Value
+        _G.AutoClaimReward1 = Value
+        spawn(function()MineOre()end)
+        spawn(function()UnlockZone()end)
+        spawn(function()HatchEgg()end)
+    end    
 })
 
 --upgrades toggles
