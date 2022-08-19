@@ -30,3 +30,7 @@ end
 if game.PlaceId == 10379662529 then
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/VictoryJump.lua"), true))()
 end
+--Magic Clicker
+if game.PlaceId == 9170761016 then
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/MagicClicker.lua"), true))()
+end
