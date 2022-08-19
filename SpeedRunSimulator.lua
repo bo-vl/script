@@ -140,7 +140,7 @@ AutoFarm:AddToggle({
 Eggs:AddDropdown({
 	Name = "Egg Select",
 	Default = "EggOne",
-	Options = {"EggOne", "EggTwo", "EggThree", "EggFour", "EggFive", "EggSix", "EggSeven", "EggEight", "Eggnine", "EggTen", "EggTweleve", "EggTwelve"},
+	Options = {"EggOne", "EggTwo", "EggThree", "EggFour", "EggSix", "EggSeven", "EggEight", "Eggnine", "EggTen", "EggTwelve", "EggThirteen"},
 	Callback = function(Value)
 		_G.EggSelect = Value
         print(_G.EggSelect)
