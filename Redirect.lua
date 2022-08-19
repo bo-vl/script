@@ -22,3 +22,11 @@ end
 if game.PlaceId == 5293755937 then
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/SpeedRunSimulator.lua"), true))()
 end
+--Speed Run Simulator 2
+if game.PlaceId == 7047488135 then
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/SpeedrunSimulator2.lua"), true))()
+end
+--Victory Jump
+if game.PlaceId == 10379662529 then
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/VictoryJump.lua"), true))()
+end
