@@ -1,1 +1,1 @@
-repeat
+print("noob")
