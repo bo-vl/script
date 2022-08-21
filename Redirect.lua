@@ -11,11 +11,11 @@ if game.PlaceId == 10108131074 then
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/MowTheLawn.lua"), true))()
 end
 --Speed Run 4
-if game.PlaceId == 10108131074 then
+if game.PlaceId == 183364845 then
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/SpeedRun4.lua"), true))()
 end
 --Victory Race
-if game.PlaceId == 10108131074 then
+if game.PlaceId == 4951858512 then
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/VictoryRace.lua"), true))()
 end
 --Speed Run Simulator
