@@ -34,3 +34,7 @@ end
 if game.PlaceId == 9170761016 then
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/MagicClicker.lua"), true))()
 end
+--wheat Farming simulator
+if game.PlaceId == 9170761016 then
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/WheatFarmingSimulator.lua"), true))()
+end
