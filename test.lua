@@ -23,3 +23,5 @@ local RushCoroutine = coroutine.create(function()
         game.Players.LocalPlayer.Character:MoveTo(OldPos)
     end)
 end)
+
+coroutine.resume(RushCoroutine)
