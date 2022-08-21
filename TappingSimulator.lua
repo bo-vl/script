@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "bo's script Hub|Tapping Simulator!|", HidePremium = false, IntroText = "Bo's Script Hub", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "bo's script Hub|Tapping Simulator!|", HidePremium = false, IntroText = "Tapping Simulator", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 --Values
 

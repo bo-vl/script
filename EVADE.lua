@@ -1,0 +1,2 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Bo's script hub |Evade|", HidePremium = false, IntroText = "Evade" SaveConfig = true, ConfigFolder = "OrionTest"})
