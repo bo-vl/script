@@ -1,4 +1,3 @@
-local GuiService = game:GetService("GuiService")
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "bo's script Hub |Wheat Farming Simulator", HidePremium = false,IntroText = "Wheat Farming Simulator", SaveConfig = false, ConfigFolder = "OrionTest"})
 
