@@ -1,6 +1,13 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "bo's script Hub |Evade|", HidePremium = false,IntroText = "Evade", SaveConfig = false, ConfigFolder = "OrionTest"})
-local players = game.Players:GetPlayers()
+local Light = game:GetService("Lighting")
+
+function dofullbright()
+    Light.Ambient = Color3.new(1, 1, 1)
+    Light.ColorShift_Bottom = Color3.new(1, 1, 1)
+    Light.ColorShift_Top = Color3.new(1, 1, 1)
+    end
+
 
 local CharTab= Window:MakeTab({
 	Name = "Character",
@@ -33,22 +40,14 @@ CharTab:AddSlider({
     end    
 })
 
---functions and shit
-
-local pcl = Instance.new("SpotLight")
-pcl.Brightness = 10
-pcl.Face = Enum.NormalId.Front
-pcl.Range = 90
-pcl.Parent = game.Players.LocalPlayer.Character.Head
-pcl.Enabled = false
-
-CharTab:AddToggle({
-	Name = "Headlight",
-	Default = false,
-    Callback = function(Value)
-        pcl.Enabled = Value
-    end
+CharTab:AddButton({
+	Name = "Full Bright",
+	Callback = function()
+        dofullbright()
+  	end    
 })
+
+--functions and shit
 
 game:GetService("RunService").RenderStepped:Connect(function()
     pcall(function()
