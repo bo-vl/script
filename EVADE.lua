@@ -2,34 +2,29 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "bo's script Hub |Evade|", HidePremium = false,IntroText = "Evade", SaveConfig = false, ConfigFolder = "OrionTest"})
 local players = game.Players:GetPlayers()
 
-game:GetService("RunService").RenderStepped:Connect(function()
-    pcall(function()
-        if game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
-            game.Players.LocalPlayer.Character:TranslateBy(game.Players.LocalPlayer.Character.Humanoid.MoveDirection * TargetWalkspeed/50)
-        end
-    end)
-end)
-
-local CharTab = Window:MakeTab({
+local CharTab= Window:MakeTab({
 	Name = "Character",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-
-local TargetWalkspeed
-CharTab:AddSlider({
-	Name = "Speed",
-	Min = 0,
-	Max = 50,
-	Default = 5,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	Callback = function(Value)
-		TargetWalkspeed = Value
+CharTab:AddBind({
+	Name = "Reset HipHeigth",
+	Default = Enum.KeyCode.E,
+	Hold = false,
+	Callback = function()
+		game.Players.LocalPlayer.Character.Humanoid.HipHeight = -1
 	end    
 })
 
+CharTab:AddBind({
+	Name = "Set hipheight 20",
+	Default = Enum.KeyCode.X,
+	Hold = false,
+	Callback = function()
+		game.Players.LocalPlayer.Character.Humanoid.HipHeight = 20
+	end    
+})
 
 
 OrionLib:Init()
