@@ -1,7 +1,14 @@
+game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+wait(1)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "bo's script Hub |Evade|", HidePremium = false,IntroText = "Evade Version 1.1", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "bo's script Hub |Evade|", HidePremium = false,IntroText = "Evade Version 1.2", SaveConfig = false, ConfigFolder = "OrionTest"})
 local GuiService = game:GetService("GuiService")
 local Light = game:GetService("Lighting")
+
+
+--functions and shit
+
+_G.AutoSlide = true
 
 function dofullbright()
     Light.Ambient = Color3.new(1, 1, 1)
@@ -14,6 +21,18 @@ function dofullbright()
     game.Lighting.GlobalShadows = false
     end
 
+function Autoslide()
+    while _G.AutoSlide == true do
+    game:GetService("ReplicatedStorage").ModuleStorage.WeaponBase.Framework.BaseVM.Slide:Fire()
+    local ohString1 = "Crouch"
+    local ohBoolean2 = true
+    game:GetService("Players").LocalPlayer.PlayerScripts.Events.KeybindUsed:Fire(ohString1, ohBoolean2)
+    wait()
+    end
+end
+    
+
+--the tabs and shit
 
 local CharTab= Window:MakeTab({
 	Name = "Character",
@@ -25,6 +44,21 @@ local MiscTab= Window:MakeTab({
 	Name = "Misc",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
+})
+
+local FunTab= Window:MakeTab({
+	Name = "Fun",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+FunTab:AddToggle({
+	Name = "AutoSlide (press c for onces after turning on)",
+	Default = false,
+	Callback = function(Value)
+        _G.AutoSlide = Value
+		Autoslide()
+	end    
 })
 
 local TargetWalkspeed
@@ -65,13 +99,6 @@ MiscTab:AddButton({
 })
 
 MiscTab:AddButton({
-	Name = "Full Bright",
-	Callback = function()
-        dofullbright()
-  	end    
-})
-
-MiscTab:AddButton({
 	Name = "Q to Teleport",
 	Callback = function()
         plr = game.Players.LocalPlayer 
@@ -87,8 +114,39 @@ MiscTab:AddButton({
   	end    
 })
 
---functions and shit
+MiscTab:AddButton({
+	Name = "Full Bright",
+	Callback = function()
+        dofullbright()
+  	end    
+})
 
+MiscTab:AddButton({
+	Name = "Return Too Main Menu",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Events.ReturnToMenu:FireServer()
+  	end    
+})
+
+MiscTab:AddButton({
+	Name = "Low Quality",
+	Callback = function()
+        local ohString1 = "LowQuality"
+        local ohBoolean2 = true
+        game:GetService("ReplicatedStorage").Events.UpdateSetting:FireServer(ohString1, ohBoolean2)
+  	end    
+})
+
+MiscTab:AddBind({
+	Name = "Random Vote",
+	Default = Enum.KeyCode.E,
+	Hold = false,
+	Callback = function()
+        local RandomVote = math.random(3)
+		local ohNumber1 = (RandomVote)
+        game:GetService("ReplicatedStorage").Events.Vote:FireServer(ohNumber1)
+	end    
+})
 
 game:GetService("RunService").RenderStepped:Connect(function()
     pcall(function()
