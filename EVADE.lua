@@ -70,7 +70,7 @@ MiscTab:AddButton({
         dofullbright()
   	end    
 })
-\
+
 --functions and shit
 
 
