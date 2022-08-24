@@ -1,7 +1,7 @@
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 wait(1)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "bo's script Hub |Evade|", HidePremium = false,IntroText = "Evade Version 1.2", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "bo's script Hub |Evade|", HidePremium = false,IntroText = "Evade Version 1.3", SaveConfig = false, ConfigFolder = "OrionTest"})
 local GuiService = game:GetService("GuiService")
 local Light = game:GetService("Lighting")
 
@@ -76,9 +76,9 @@ CharTab:AddSlider({
 
 CharTab:AddSlider({
     Name = "Hip height",
-    Min = -1.50,
+    Min = -1.45,
     Max = 100,
-    Default = -1.50,
+    Default = -1.45,
     Color = Color3.fromRGB(255,255,255),
     Increment = 1,
     Callback = function(HipValue)
@@ -139,7 +139,7 @@ MiscTab:AddButton({
 
 MiscTab:AddBind({
 	Name = "Random Vote",
-	Default = Enum.KeyCode.E,
+	Default = Enum.KeyCode.X,
 	Hold = false,
 	Callback = function()
         local RandomVote = math.random(3)
