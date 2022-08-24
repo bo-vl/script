@@ -38,3 +38,7 @@ end
 if game.PlaceId == 9170761016 then
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/WheatFarmingSimulator.lua"), true))()
 end
+--Evade
+if game.PlaceId == 9872472334 then
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua"), true))()
+end
