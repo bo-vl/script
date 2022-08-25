@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "bo's script Hub |Magic Clicker|", HidePremium = false,IntroText = "Magic Clicker", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Magic Clicker|", HidePremium = false,IntroText = "Magic Clicker", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 --values
 

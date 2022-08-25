@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "bo's script Hub |Mow The Lawn!|", HidePremium = false, IntroText = "Mow the lawn", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Mow The Lawn!|", HidePremium = false, IntroText = "Mow the lawn", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 --values
 _G.autoMowlawn = true

@@ -1,5 +1,5 @@
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "bo's script Hub |Victory Race|", HidePremium = false, IntroText = "Victory Race", SaveConfig = false, ConfigFolder = "OrionTest"})
+    local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Victory Race|", HidePremium = false, IntroText = "Victory Race", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 
 --values
