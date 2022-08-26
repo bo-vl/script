@@ -115,9 +115,9 @@ local MainTab3 = MainTab:AddSection({
 local TargetWalkspeed
 MainTab:AddSlider({
 	Name = "Speed",
-	Min = -1,
+	Min = -2,
 	Max = 100,
-	Default = -1,
+	Default = -2,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	Callback = function(Value)
@@ -231,13 +231,6 @@ MiscTab:AddButton({
 })
 
 MiscTab:AddButton({
-	Name = "Respawn",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
-  	end    
-})
-
-MiscTab:AddButton({
 	Name = "Full Bright",
 	Callback = function()
         dofullbright()
@@ -327,5 +320,14 @@ game:GetService("RunService").RenderStepped:Connect(function()
         end
     end)
 end)
+
+setclipboard("https://discord.gg/k9a4zym5uG")
+
+OrionLib:MakeNotification({
+Name = "Join Discord",
+Content = "Join the Discord Copied in your clip Board",
+Image = "rbxassetid://4483345998",
+Time = 5
+})
 
 OrionLib:Init()
