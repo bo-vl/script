@@ -1,7 +1,7 @@
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 wait(1)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Evade|", HidePremium = false,IntroText = "Evade Version 1.4", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Evade|", HidePremium = false,IntroText = "Evade Version 1.5", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 --locals
 local GuiService = game:GetService("GuiService")
@@ -9,7 +9,38 @@ local Light = game:GetService("Lighting")
 
 --functions and shit
 
-_G.AutoSlide = true
+autorev1 = true
+AutoSlide = true
+money = true
+revivedie = true
+autowistle = true
+autochat1 = true
+
+function autochat()
+    while autochat1 == true do
+        local ohString1 = "Hydra hub on top"
+        local ohString2 = "All"
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(ohString1, ohString2)
+        wait(1)
+    end
+end
+
+function autowistlefunction()
+    while autowistle == true do
+        local ohString1 = "Whistle"
+        local ohBoolean2 = true
+        game:GetService("Players").LocalPlayer.PlayerScripts.Events.KeybindUsed:Fire(ohString1, ohBoolean2)
+        game:GetService("ReplicatedStorage").Events.Whistle:FireServer()
+        wait(5)
+    end
+end
+
+function god()
+    while revivedie == true do
+        game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+        wait(1)
+    end
+end
 
 function dofullbright()
     Light.Ambient = Color3.new(1, 1, 1)
@@ -22,8 +53,16 @@ function dofullbright()
     game.Lighting.GlobalShadows = false
     end
 
+function freemoney()
+    while money == true do
+        local ohString1 = "Free money <font color=\"rgb(100,255,100)\">($99999)</font>"
+        game:GetService("Players").LocalPlayer.PlayerGui.HUD.Messages.Use:Fire(ohString1)
+        wait(5)
+    end
+end
+
 function Autoslide()
-    while _G.AutoSlide == true do
+    while AutoSlide == true do
     game:GetService("ReplicatedStorage").ModuleStorage.WeaponBase.Framework.BaseVM.Slide:Fire()
     local ohString1 = "Crouch"
     local ohBoolean2 = true
@@ -33,16 +72,24 @@ function Autoslide()
 end
     
 
---the tabs and shit
+function autorev()
+    while autorev1 == true do
+        local ohString1 = "Caribbeanv"
+        local ohBoolean2 = false
+        game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(ohString1, ohBoolean2)
+        wait()
+    end
+end
+--tabs
 
-local CharTab= Window:MakeTab({
-	Name = "Character",
+local MainTab= Window:MakeTab({
+	Name = "Main features",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
 local MiscTab= Window:MakeTab({
-	Name = "Misc",
+	Name = "Extra",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -53,21 +100,24 @@ local FunTab= Window:MakeTab({
 	PremiumOnly = false
 })
 
-FunTab:AddToggle({
-	Name = "AutoSlide (press c for onces after turning on)",
-	Default = false,
-	Callback = function(Value)
-        _G.AutoSlide = Value
-		Autoslide()
-	end    
+local TestTab = Window:MakeTab({
+	Name = "Test",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = true
+})
+
+--sliders
+
+local MainTab3 = MainTab:AddSection({
+	Name = "Sliders"
 })
 
 local TargetWalkspeed
-CharTab:AddSlider({
+MainTab:AddSlider({
 	Name = "Speed",
-	Min = 0,
+	Min = -1,
 	Max = 100,
-	Default = 0,
+	Default = -1,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	Callback = function(Value)
@@ -75,7 +125,7 @@ CharTab:AddSlider({
 	end   
 })
 
-CharTab:AddSlider({
+MainTab:AddSlider({
     Name = "Hip height",
     Min = -1.45,
     Max = 100,
@@ -85,6 +135,71 @@ CharTab:AddSlider({
     Callback = function(HipValue)
         game.Players.LocalPlayer.Character.Humanoid.HipHeight = HipValue
     end    
+})
+
+--toggles
+
+local FunTab2 = FunTab:AddSection({
+	Name = "Toggles"
+})
+
+local MiscTab3 = MainTab:AddSection({
+	Name = "Toggles"
+})
+
+FunTab:AddToggle({
+	Name = "AutoSlide (press c for onces after turning on)",
+	Default = false,
+	Callback = function(Value)
+        AutoSlide = Value
+		Autoslide()
+	end    
+})
+
+FunTab:AddToggle({
+	Name = "fake money giver",
+	Default = false,
+	Callback = function(Value)
+        money = Value
+        freemoney()
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "auto revive (only need to press e instead of holding)",
+	Default = false,
+	Callback = function(Value)
+        autorev1 = Value
+        autorev()
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "auto respawn (you respawn when you get downed)",
+	Default = false,
+	Callback = function(Value)
+        revivedie = Value
+        god()
+	end    
+})
+
+FunTab:AddToggle({
+	Name = "Auto Wistle",
+	Default = false,
+	Callback = function(Value)
+		autowistle = Value
+        autowistlefunction()
+	end    
+})
+
+--buttons
+
+local FunTab3 = FunTab:AddSection({
+	Name = "Buttons"
+})
+
+local MiscTab2 = MiscTab:AddSection({
+	Name = "Buttons"
 })
 
 MiscTab:AddButton({
@@ -116,6 +231,13 @@ MiscTab:AddButton({
 })
 
 MiscTab:AddButton({
+	Name = "Respawn",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+  	end    
+})
+
+MiscTab:AddButton({
 	Name = "Full Bright",
 	Callback = function()
         dofullbright()
@@ -138,6 +260,23 @@ MiscTab:AddButton({
   	end    
 })
 
+FunTab:AddButton({
+    Name = "Free cam (shift + P)",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Robobo2022/script/main/Freecam.lua"))()
+      end    
+})
+
+--keybinds
+
+local MiscTab1 = MiscTab:AddSection({
+	Name = "KeyBinds"
+})
+
+local FunTab1 = FunTab:AddSection({
+	Name = "KeyBinds"
+})
+
 MiscTab:AddBind({
 	Name = "Random Vote",
 	Default = Enum.KeyCode.X,
@@ -148,6 +287,38 @@ MiscTab:AddBind({
         game:GetService("ReplicatedStorage").Events.Vote:FireServer(ohNumber1)
 	end    
 })
+
+FunTab:AddBind({
+	Name = "Random Emote",
+	Default = Enum.KeyCode.Z,
+	Hold = false,
+	Callback = function()
+        local number = math.random(4)
+        local ohString1 = (number)
+        game:GetService("ReplicatedStorage").Events.Emote:FireServer(ohString1)
+	end    
+})
+
+MiscTab:AddBind({
+	Name = "Respawn",
+	Default = Enum.KeyCode.R,
+	Hold = false,
+	Callback = function()
+        game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+	end    
+})
+
+--test
+
+TestTab:AddToggle({
+	Name = "Spam Chat",
+	Default = false,
+	Callback = function(Value)
+		autochat1 = Value
+        autochat()
+	end    
+})
+
 
 game:GetService("RunService").RenderStepped:Connect(function()
     pcall(function()
