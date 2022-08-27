@@ -1,5 +1,13 @@
-local players = game.Players:GetPlayers()
+ESPTab:AddToggle({
+    Name = "Esp",
+    Default = true,
+    Callback = function(Value)
+        getgenv().toggleespmpt = Value
+    end    
+})
 
+getgenv().toggleespmpt = true
+local players = game.Players:GetPlayers()
 local function esp(v)
     repeat wait() until v.Character.Humanoid
     if v ~= game.Players.LocalPlayer and v.Team ~= game.Players.LocalPlayer.Team then
