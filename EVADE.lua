@@ -362,7 +362,6 @@ local cam = workspace.CurrentCamera
 local rs = game:GetService'RunService'
 
 getgenv().toggleespmpt = true
-getgenv().Thickmpt = 2
 function esp(plr)
    if game:GetService'Players':GetPlayerFromCharacter(plr) == nil then
     local rat = Drawing.new("Line")
@@ -371,7 +370,6 @@ function esp(plr)
                 local vector,screen = cam:WorldToViewportPoint(plr.HumanoidRootPart.Position)
                 if screen then
                     rat.Visible = toggleespmpt
-                    rat.Thickness = Thickmpt
                     rat.From = Vector2.new(cam.ViewportSize.X / 2,cam.ViewportSize.Y / 1)
                     rat.To = Vector2.new(vector.X,vector.Y)
                     rat.Color = getgenv().mptespcolour
