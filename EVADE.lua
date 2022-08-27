@@ -84,6 +84,12 @@ local MiscTab= Window:MakeTab({
 	PremiumOnly = false
 })
 
+local ESPTab = Window:MakeTab({
+    Name =  "Tracers",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
 local TeleportTab= Window:MakeTab({
 	Name = "Teleport",
 	Icon = "rbxassetid://4483345998",
@@ -335,6 +341,65 @@ MiscTab:AddBind({
 })
 
 --test
+
+ESPTab:AddToggle({
+    Name = "Esp",
+    Default = true,
+    Callback = function(Value)
+        getgenv().toggleespmpt = Value
+    end    
+})
+
+ESPTab:AddColorpicker({
+    Name = "Colour",
+    Default = Color3.fromRGB(255, 255, 255),
+    Callback = function(Value)
+        getgenv().mptespcolour = Value
+    end  
+})
+
+local cam = workspace.CurrentCamera
+local rs = game:GetService'RunService'
+
+getgenv().toggleespmpt = true
+getgenv().Thickmpt = 2
+function esp(plr)
+   if game:GetService'Players':GetPlayerFromCharacter(plr) == nil then
+    local rat = Drawing.new("Line")
+        rs.RenderStepped:Connect(function()
+            if plr:FindFirstChild'HumanoidRootPart' then
+                local vector,screen = cam:WorldToViewportPoint(plr.HumanoidRootPart.Position)
+                if screen then
+                    rat.Visible = toggleespmpt
+                    rat.Thickness = Thickmpt
+                    rat.From = Vector2.new(cam.ViewportSize.X / 2,cam.ViewportSize.Y / 1)
+                    rat.To = Vector2.new(vector.X,vector.Y)
+                    rat.Color = getgenv().mptespcolour
+                    rat.Thickness = getgenv().mptespthickness
+                    else
+                        rat.Visible = false
+                end
+                else
+                    pcall(function()
+                    rat.Visible = false
+                    end)
+            end
+                if not plr:FindFirstChild'HumanoidRootPart' or not plr:FindFirstChild'HumanoidRootPart':IsDescendantOf(game:GetService'Workspace') then
+                    pcall(function()
+                    rat:Remove()
+                    end)
+            end
+        end)
+   end
+end
+
+for i,v in pairs(game:GetService'Workspace'.Game.Players:GetChildren()) do
+    esp(v)
+end
+
+game:GetService'Workspace'.Game.Players.ChildAdded:Connect(function(plr)
+    esp(plr)
+end)
 
 TestTab:AddToggle({
 	Name = "Spam Chat",
