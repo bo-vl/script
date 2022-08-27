@@ -1,7 +1,7 @@
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 wait(1)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Evade|", HidePremium = false,IntroText = "Evade Version 1.9", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Evade|", HidePremium = false,IntroText = "Evade Version 1.7", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 --locals
 local GuiService = game:GetService("GuiService")
@@ -136,7 +136,8 @@ MainTab:AddSlider({
     Increment = 1,
     Callback = function(HipValue)
         game.Players.LocalPlayer.Character.Humanoid.HipHeight = HipValue
-    end   
+    end    
+})
 --toggles
 
 local FunTab2 = FunTab:AddSection({
