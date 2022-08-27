@@ -84,6 +84,12 @@ local MiscTab= Window:MakeTab({
 	PremiumOnly = false
 })
 
+local TeleportTab= Window:MakeTab({
+	Name = "Teleport",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 local FunTab= Window:MakeTab({
 	Name = "Fun",
 	Icon = "rbxassetid://4483345998",
@@ -241,6 +247,52 @@ FunTab:AddButton({
       end    
 })
 
+TeleportTab:AddButton({
+    Name = "Main Game",
+    Callback = function()
+        local TeleportService = game:GetService('TeleportService')
+        GameId = 9872472334
+        TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+      end    
+})
+
+
+TeleportTab:AddButton({
+    Name = "Casual",
+    Callback = function()
+        local TeleportService = game:GetService('TeleportService')
+        GameId = 10662542523
+        TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+      end    
+})
+
+TeleportTab:AddButton({
+    Name = "Social Space",
+    Callback = function()
+        local TeleportService = game:GetService('TeleportService')
+        GameId = 10324347967
+        TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+      end    
+})
+
+TeleportTab:AddButton({
+    Name = "Big Team",
+    Callback = function()
+        local TeleportService = game:GetService('TeleportService')
+        GameId = 10324346056
+        TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+      end    
+})
+
+TeleportTab:AddButton({
+    Name = "Team DeathMatch",
+    Callback = function()
+        local TeleportService = game:GetService('TeleportService')
+        GameId = 110539706691
+        TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+      end    
+})
+
 --keybinds
 
 local MiscTab1 = MiscTab:AddSection({
@@ -292,7 +344,6 @@ TestTab:AddToggle({
         autochat()
 	end    
 })
-
 
 game:GetService("RunService").RenderStepped:Connect(function()
     pcall(function()
