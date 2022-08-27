@@ -136,9 +136,7 @@ MainTab:AddSlider({
     Increment = 1,
     Callback = function(HipValue)
         game.Players.LocalPlayer.Character.Humanoid.HipHeight = HipValue
-    end    
-})
-
+    end   
 --toggles
 
 local FunTab2 = FunTab:AddSection({
