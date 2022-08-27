@@ -9,7 +9,6 @@ local Light = game:GetService("Lighting")
 
 --functions and shit
 
-autorev1 = true
 AutoSlide = true
 money = true
 revivedie = true
@@ -71,15 +70,6 @@ function Autoslide()
     end
 end
     
-
-function autorev()
-    while autorev1 == true do
-        local ohString1 = "Caribbeanv"
-        local ohBoolean2 = false
-        game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(ohString1, ohBoolean2)
-        wait()
-    end
-end
 --tabs
 
 local MainTab= Window:MakeTab({
@@ -162,15 +152,6 @@ FunTab:AddToggle({
 	Callback = function(Value)
         money = Value
         freemoney()
-	end    
-})
-
-MainTab:AddToggle({
-	Name = "auto revive (only need to press e instead of holding)",
-	Default = false,
-	Callback = function(Value)
-        autorev1 = Value
-        autorev()
 	end    
 })
 
