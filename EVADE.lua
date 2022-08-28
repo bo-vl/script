@@ -1,7 +1,7 @@
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 wait(1)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Evade|", HidePremium = false,IntroText = "Evade Version 1.11", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Evade|", HidePremium = false,IntroText = "Evade Version 1.12", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 --locals
 local GuiService = game:GetService("GuiService")
