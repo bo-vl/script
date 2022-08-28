@@ -50,7 +50,7 @@ function dofullbright()
     game.Lighting.ClockTime = 14
     game.Lighting.Brightness = 2
     game.Lighting.GlobalShadows = false
-    end
+end
 
 function freemoney()
     while money == true do
