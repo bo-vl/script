@@ -194,6 +194,21 @@ local MiscTab2 = MiscTab:AddSection({
 	Name = "Buttons"
 })
 
+
+FunTab:AddButton({
+	Name = "Alpha Skin (Permanant)",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Events.UI.Purchase:InvokeServer("Skins", "AlphaTester")
+  	end    
+})
+
+FunTab:AddButton({
+	Name = "Boombox Skin (Permanant)",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Events.UI.Purchase:InvokeServer("Skins", "Boombox")
+  	end    
+})
+
 MiscTab:AddButton({
 	Name = "Inf Jump",
 	Callback = function()
