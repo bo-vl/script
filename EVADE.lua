@@ -273,12 +273,9 @@ FunTab:AddButton({
 FunTab:AddButton({
     Name = "Server Crasher",
     Callback = function()
-        local Events = game:WaitForChild("ReplicatedStorage"):WaitForChild("Events")
-        local Respawn = Events:WaitForChild("Respawn")
         while task.wait() do
-            if Respawn then
-                Respawn:FireServer()
-            end
+            game:GetService("ReplicatedStorage").Events.Reset:FireServer()
+            game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
         end
       end    
 })
