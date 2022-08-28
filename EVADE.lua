@@ -252,6 +252,19 @@ FunTab:AddButton({
       end    
 })
 
+FunTab:AddButton({
+    Name = "Server Crasher",
+    Callback = function()
+        local Events = game:WaitForChild("ReplicatedStorage"):WaitForChild("Events")
+        local Respawn = Events:WaitForChild("Respawn")
+        while task.wait() do
+            if Respawn then
+                Respawn:FireServer()
+            end
+        end
+      end    
+})
+
 TeleportTab:AddButton({
     Name = "Main Game",
     Callback = function()
