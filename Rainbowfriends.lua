@@ -80,4 +80,22 @@ game:GetService("RunService").RenderStepped:Connect(function()
     end)
 end)
 
+MainTab:AddButton({
+	Name = "Item esp",
+	Callback = function()
+		for i, v in pairs(game.Workspace:GetChildren()) do
+			if v:IsA("Model") then
+				for i, v in pairs(v:GetChildren()) do
+					if v.Name == "TouchTrigger" then
+					  local espp = Instance.new("Highlight")
+					  espp.Parent = v.Parent
+					  espp.FillColor = Color3.new(169, 255, 116)
+					  espp.FillTransparencyy = 0.55    
+					end
+				end
+			end 
+		end
+  	end    
+})
+
 OrionLib:Init()
