@@ -1,7 +1,7 @@
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 wait(1)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Evade|", HidePremium = false,IntroText = "Evade Version 1.12", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Evade|", HidePremium = false,IntroText = "Evade Version Early Acces", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 --locals
 local GuiService = game:GetService("GuiService")
@@ -17,8 +17,8 @@ autochat1 = true
 autofarm = true
 
 function functionautofarm()
-    while autofarm == true do
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3080.2978515625, -740.00439453125, 16.78089714050293)
+    while autofarm == true do task.wait()
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(3080.2978515625, -740.00439453125, 16.78089714050293)
         wait(0.0000000000000001)
     end
 end
