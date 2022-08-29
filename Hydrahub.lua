@@ -13,7 +13,7 @@ _G.KeyInput = "string"
 
 function MakeScriptHub()
 loadstring(game:HttpGet((""), true))()
-
+    OrionLib:Destroy()
 end
 
 
@@ -43,7 +43,7 @@ local Tab = Window:MakeTab({
 
 Tab:AddTextbox({
 	Name = "Enter Key",
-	Default = "Enter Key",
+	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
         _G.KeyInput = Value
@@ -61,3 +61,5 @@ Tab:AddButton({
         end
   	end    
 })
+
+OrionLib:Init()
