@@ -128,39 +128,6 @@ MiscTab:AddButton({Name="Q to Teleport",Callback=function()
 		if (key == "q") then
 			if mouse.Target then
 				hum.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z);
-=======
-local StrToNumber = tonumber;
-local Byte = string.byte;
-local Char = string.char;
-local Sub = string.sub;
-local Subg = string.gsub;
-local Rep = string.rep;
-local Concat = table.concat;
-local Insert = table.insert;
-local GetFEnv = getfenv or function()
-	return _ENV;
-end;
-local Setmetatable = setmetatable;
-local PCall = pcall;
-local Select = select;
-local Unpack = unpack or table.unpack;
-local ToNumber = tonumber;
-local function VMCall(ByteString, vmenv)
-	local DIP = 1;
-	local repeatNext;
-	ByteString = Subg(Sub(ByteString, 5), "..", function(byte)
-		if (Byte(byte, 2) == 79) then
-			repeatNext = StrToNumber(Sub(byte, 1, 1));
-			return "";
-		else
-			local a = Char(StrToNumber(byte, 16));
-			if repeatNext then
-				local b = Rep(a, repeatNext);
-				repeatNext = nil;
-				return b;
-			else
-				return a;
->>>>>>> db52b60057b62c8a0a59283b23fbfbef370a1ce2
 			end
 		end
 	end);
