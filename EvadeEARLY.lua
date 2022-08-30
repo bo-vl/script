@@ -19,6 +19,7 @@ autofarm = true
 function functionautofarm()
     while autofarm == true do task.wait()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(3080.2978515625, -740.00439453125, 16.78089714050293)
+        game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
         wait(0.0000000000000001)
     end
 end
