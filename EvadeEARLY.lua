@@ -1,7 +1,7 @@
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 wait(1)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Evade|", HidePremium = false,IntroText = "Evade Version Early Acces", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Evade|", HidePremium = false,IntroText = "Evade Version 1.15", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 --locals
 local GuiService = game:GetService("GuiService")
@@ -19,7 +19,6 @@ autofarm = true
 function functionautofarm()
     while autofarm == true do task.wait()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(3080.2978515625, -740.00439453125, 16.78089714050293)
-        game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
         wait(0.0000000000000001)
     end
 end
@@ -399,7 +398,23 @@ MiscTab:AddBind({
 --test
 
 ESPTab:AddToggle({
-    Name = "Esp",
+    Name = "Ai Player",
+    Default = true,
+    Callback = function(Value)
+        getgenv().Toggleesp = Value
+    end    
+})
+
+ESPTab:AddColorpicker({
+    Name = "Colour for player esp",
+    Default = Color3.fromRGB(255, 255, 255),
+    Callback = function(Value)
+        getgenv().tespcolour = Value
+    end  
+})
+
+ESPTab:AddToggle({
+    Name = "Ai Esp",
     Default = true,
     Callback = function(Value)
         getgenv().toggleespmpt = Value
@@ -407,7 +422,7 @@ ESPTab:AddToggle({
 })
 
 ESPTab:AddColorpicker({
-    Name = "Colour",
+    Name = "Colour for ai esp",
     Default = Color3.fromRGB(255, 255, 255),
     Callback = function(Value)
         getgenv().mptespcolour = Value
@@ -459,6 +474,45 @@ end
 
 game:GetService'Workspace'.Game.Players.ChildAdded:Connect(function(plr)
     esp(plr)
+end)
+
+local camt = workspace.CurrentCamera
+local rst = game:GetService'RunService'
+
+getgenv().Toggleesp = true
+function espplayer(plr)
+    local rat = Drawing.new("Line")
+        rst.RenderStepped:Connect(function()
+            if plr:FindFirstChild'HumanoidRootPart' then
+                local vector,screen = cam:WorldToViewportPoint(plr.HumanoidRootPart.Position)
+                if screen then
+                    rat.Visible = Toggleesp
+                    rat.From = Vector2.new(camt.ViewportSize.X / 2,camt.ViewportSize.Y / 1)
+                    rat.To = Vector2.new(vector.X,vector.Y)
+                    rat.Color = getgenv().tespcolour
+                    rat.Thickness = getgenv().mptespthickness
+                    else
+                        rat.Visible = false
+                end
+                else
+                    pcall(function()
+                    rat.Visible = false
+                    end)
+            end
+                if not plr:FindFirstChild'HumanoidRootPart' or not plr:FindFirstChild'HumanoidRootPart':IsDescendantOf(game:GetService'Workspace') then
+                    pcall(function()
+                    rat:Remove()
+                    end)
+            end
+        end)
+   end
+
+for i,v in pairs(game:GetService'Workspace'.Game.Players:GetChildren()) do
+    espplayer(v)
+end
+
+game:GetService'Workspace'.Game.Players.ChildAdded:Connect(function(plr)
+    espplayer(plr)
 end)
 
 game:GetService("RunService").RenderStepped:Connect(function()
