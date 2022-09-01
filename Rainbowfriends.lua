@@ -98,4 +98,49 @@ MainTab:AddButton({
   	end    
 })
 
+MainTab:AddButton({
+	Name = "Monest esp!",
+	Callback = function()
+        local function add()
+            for i, v in pairs(workspace:WaitForChild("Monsters"):GetChildren()) do
+                if v.Name == "Blue" then
+                    local hl = Instance.new("Highlight")
+                    hl.Parent = v
+                    hl.FillColor = Color3.fromRGB(0, 0, 255)
+                end
+                if v.Name == "Orange" then
+                    local hl = Instance.new("Highlight")
+                    hl.Parent = v
+                    hl.FillColor = Color3.fromRGB(255, 128, 0)
+                end
+                if v.Name == "Green" then
+                    local hl = Instance.new("Highlight")
+                    hl.Parent = v
+                    hl.FillColor = Color3.fromRGB(0, 255, 0)
+                end
+                if v.Name == "Purple" then
+                    local hl = Instance.new("Highlight")
+                    hl.Parent = v
+                    hl.FillColor = Color3.fromRGB(125, 0, 125)
+                end
+            end
+        end
+        
+        local function remove()
+            for i, v in pairs(workspace:WaitForChild("Monsters"):GetChildren()) do
+                for i, v in pairs(v:GetChildren()) do
+                    if v:IsA("Highlight") then
+                        v:Destroy()
+                    end
+                end
+            end
+        end
+        
+        workspace:WaitForChild("Monsters").DescendantAdded:Connect(function()
+            remove()
+            add()
+        end)
+  	end    
+})
+
 OrionLib:Init()
