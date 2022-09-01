@@ -42,3 +42,7 @@ end
 if game.PlaceId == 9872472334 or 10662542523 or 10324347967 or 10324346056 or 10530697691 then
    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua"), true))()
 end
+--RaindBow friends
+if game.PlaceId == 7991339063 then
+   loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/Rainbowfriends.lua"), true))()
+end
