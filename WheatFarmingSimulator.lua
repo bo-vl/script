@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Wheat Farming Simulator", HidePremium = false,IntroText = "Wheat Farming Simulator", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Hydra Network |Wheat Farming Simulator", HidePremium = false,IntroText = "Wheat Farming Simulator", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 --values
 

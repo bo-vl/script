@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Hydra Hub |Mining Clicker Simulator|", HidePremium = false,IntroText = "Mining Clicker Simulator", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Hydra Network |Mining Clicker Simulator|", HidePremium = false,IntroText = "Mining Clicker Simulator", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 --auto farm
 _G.autoclicker = true

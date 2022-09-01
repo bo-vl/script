@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Hydra Hub|Speed Run Simulator|", HidePremium = false, IntroText = "Speed Run Simulator", SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Hydra Network |Speed Run Simulator|", HidePremium = false, IntroText = "Speed Run Simulator", SaveConfig = false, ConfigFolder = "OrionTest"})
 
 --Values
 
