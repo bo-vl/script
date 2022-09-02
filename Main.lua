@@ -63,3 +63,7 @@ end
 if game.PlaceId == 7991339063 then
    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/Rainbowfriends.lua"), true))()
 end
+--nico's nextbots
+if game.PlaceId == 10118559731 then
+   loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/nico'snextbot.lua"), true))()
+end
