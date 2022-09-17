@@ -1,4 +1,4 @@
-local CoreGui = game:GetService("StarterGui")
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 local GameTable = {
     [9498006165] = "https://raw.githubusercontent.com/Robobo2022/script/main/TappingSimulator.lua",
@@ -20,32 +20,23 @@ local GameTable = {
     [10118559731] = "https://raw.githubusercontent.com/Robobo2022/script/main/nico'snextbot.lua";
 }
 
-
-
-
 if GameTable[game.PlaceId] == nil then
-    CoreGui:SetCore("SendNotification", {
-        Title = "Game not supported :(";
-        Text = "Copying discord to clipboard... Please check the game support channel for more information.";
-        Duration = 3;
+    OrionLib:MakeNotification({
+        Name = "Game not supported :(",
+        Content = "Copying discord to clipboard... Please check the game support channel for more information.",
+        Image = "rbxassetid://4483345998",
+        Time = 5
     })
     
     task.delay(2, function()
         setclipboard("https://discord.gg/k9a4zym5uG")
-            CoreGui:SetCore("SendNotification", {
-            Title = "Loading";
-            Text = "Game was not supported so its now loading Hydra Network Universal";
-            Duration = 3;
+        OrionLib:MakeNotification({
+            Name = "Loading",
+            Content = "Game was not supported so its now loading Hydra Network Universal.",
+            Image = "rbxassetid://4483345998",
+            Time = 5
         })
     end)
+    wait(5)
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/Universal.lua"), true))()
-else
-    CoreGui:SetCore("SendNotification", {
-        Title = "Discord";
-        Text = "We would appreciate if you joined our discord (Copied)";
-        Duration = 10;
-    })
-    setclipboard("https://discord.gg/k9a4zym5uG")
-
-    loadstring(game:HttpGet(GameTable[game.PlaceId]))()
 end
