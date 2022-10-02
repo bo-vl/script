@@ -598,6 +598,15 @@ MiscTab:AddButton({
 })
 
 MiscTab:AddButton({
+	Name = "Third Person",
+	Callback = function()
+        local ohString1 = "ThirdPerson"
+        local ohBoolean2 = true
+        game:GetService("Players").LocalPlayer.PlayerScripts.Events.KeybindUsed:Fire(ohString1, ohBoolean2)
+  	end    
+})
+
+MiscTab:AddButton({
 	Name = "Return Too Main Menu",
 	Callback = function()
         game:GetService("ReplicatedStorage").Events.ReturnToMenu:FireServer()
@@ -720,7 +729,7 @@ MiscTab:AddBind({
 
 MiscTab:AddBind({
 	Name = "Rejoin Server",
-	Default = Enum.KeyCode.B,
+	Default = Enum.KeyCode.P,
 	Hold = false,
 	Callback = function()
         OrionLib:MakeNotification({
