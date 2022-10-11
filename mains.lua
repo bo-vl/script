@@ -20,6 +20,7 @@ local GameTable = {
     [8888615802] = "https://raw.githubusercontent.com/spookysss/RainbowFriends/main/script%20(2).lua";
     [10118559731] = "https://raw.githubusercontent.com/Robobo2022/script/main/nico'snextbot.lua";
     [10243982775] = "https://raw.githubusercontent.com/Robobo2022/script/main/Redbox2.lua"
+    [155615604] = "https://raw.githubusercontent.com/Robobo2022/script/main/prison%20life.lua"
 }
 
 
