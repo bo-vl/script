@@ -7,20 +7,20 @@ local GameTable = {
     [183364845] = "https://raw.githubusercontent.com/Robobo2022/script/main/SpeedRun4.lua",
     [5293755937] = "https://raw.githubusercontent.com/Robobo2022/script/main/SpeedRunSimulator.lua",
     [7047488135] = "https://raw.githubusercontent.com/Robobo2022/script/main/SpeedrunSimulator2.lua",
-    [10379662529] = "https://raw.githubusercontent.com/Robobo2022/script/main/VictoryJump.lua";
-    [9170761016] = "https://raw.githubusercontent.com/Robobo2022/script/main/MagicClicker.lua";
-    [10106105124] = "https://raw.githubusercontent.com/Robobo2022/script/main/WheatFarmingSimulator.lua";
-    [9872472334] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua";
-    [10662542523] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua";
-    [10324347967] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua";
-    [10530697691] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua";
-    [10530697691] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua";
-    [10324346056] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua";
-    [10808838353] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua";
-    [8888615802] = "https://raw.githubusercontent.com/spookysss/RainbowFriends/main/script%20(2).lua";
-    [10118559731] = "https://raw.githubusercontent.com/Robobo2022/script/main/nico'snextbot.lua";
-    [10243982775] = "https://raw.githubusercontent.com/Robobo2022/script/main/Redbox2.lua"
-    [155615604] = "https://raw.githubusercontent.com/Robobo2022/script/main/prison%20life.lua"
+    [10379662529] = "https://raw.githubusercontent.com/Robobo2022/script/main/VictoryJump.lua",
+    [9170761016] = "https://raw.githubusercontent.com/Robobo2022/script/main/MagicClicker.lua",
+    [10106105124] = "https://raw.githubusercontent.com/Robobo2022/script/main/WheatFarmingSimulator.lua",
+    [9872472334] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua",
+    [10662542523] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua",
+    [10324347967] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua",
+    [10530697691] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua",
+    [10530697691] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua",
+    [10324346056] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua",
+    [10808838353] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua",
+    [8888615802] = "https://raw.githubusercontent.com/spookysss/RainbowFriends/main/script%20(2).lua",
+    [10118559731] = "https://raw.githubusercontent.com/Robobo2022/script/main/nico'snextbot.lua",
+    [10243982775] = "https://raw.githubusercontent.com/Robobo2022/script/main/Redbox2.lua",
+    [155615604] = "https://raw.githubusercontent.com/Robobo2022/script/main/prison%20life.lua",
 }
 
 
