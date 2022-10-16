@@ -22,6 +22,7 @@ local GameTable = {
     [10243982775] = "https://raw.githubusercontent.com/Robobo2022/script/main/Redbox2.lua",
     [155615604] = "https://raw.githubusercontent.com/Robobo2022/script/main/prison%20life.lua",
     [4991214437] = "https://raw.githubusercontent.com/Robobo2022/script/main/town.lua",
+    [5023820864] = "https://raw.githubusercontent.com/Robobo2022/script/main/trade%20tower.lua",
 }
 
 
