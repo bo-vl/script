@@ -121,7 +121,7 @@ MiscTab:AddButton({
 --DropDowns
 
 BuyTab:AddDropdown({
-	Name = "Select Egg",
+	Name = "Select Case",
 	Default = "Starter",
 	Options = {"Starter", "Noobie", "Stepping", "Learning", "Funding", "Business", "Legendary", "Marcellus", "Famous", "Mythic", "Eirene", "Aeschylus", "Olysseus", "Elegant", "Ornate"},
 	Callback = function(Value)
