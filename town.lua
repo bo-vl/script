@@ -260,6 +260,19 @@ local Esp = Modifieres1:AddButton('Player esp', function()
     end)
 end)
 
+Modifieres:AddSlider('fov', {
+    Text = 'Fov',
+    Default = 70,
+    Min = 0,
+    Max = 120,
+    Rounding = 1,
+    Compact = false,
+})
+
+Options.fov:OnChanged(function()
+    game:GetService'Workspace'.Camera.FieldOfView = Options.fov.Value
+end)
+
 --settings
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
 MenuGroup:AddButton('Unload', function() Library:Unload() end)
