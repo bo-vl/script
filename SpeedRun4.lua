@@ -1,5 +1,12 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Hydra Hub|Speed Run 4|", HidePremium = false, IntroText = "Speed Run 4", SaveConfig = false, ConfigFolder = "OrionTest"})
+local ownerId = game.CreatorId
+game.Players.PlayerAdded:Connect(function(player)
+    if player.UserId == ownerId then
+        game.Players.LocalPlayer:Kick("Owner Joined")
+    end
+end)
+
 
 --values
 getgenv().GetAllLvls = true

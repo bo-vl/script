@@ -6,6 +6,13 @@ local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
+local ownerId = game.CreatorId
+game.Players.PlayerAdded:Connect(function(player)
+    if player.UserId == ownerId then
+        game.Players.LocalPlayer:Kick("Owner Joined")
+    end
+end)
+
 Library:SetWatermark('Hydra Network | Redbox2 v2.0')
 
 getgenv().Color = BrickColor

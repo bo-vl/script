@@ -19,6 +19,13 @@ OrionLib:MakeNotification({
     Time = 2
 })
 local Window = OrionLib:MakeWindow({Name = "Hydra Network |Evade|", HidePremium = false,IntroText = "Evade V2.6", SaveConfig = false, ConfigFolder = "OrionTest"})
+local ownerId = game.CreatorId
+game.Players.PlayerAdded:Connect(function(player)
+    if player.UserId == ownerId then
+        game.Players.LocalPlayer:Kick("Owner Joined")
+    end
+end)
+
 
 --functions and shit
 getgenv().money = true

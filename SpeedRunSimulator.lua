@@ -1,5 +1,11 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Hydra Hub|Speed Run Simulator|", HidePremium = false, IntroText = "Speed Run Simulator", SaveConfig = false, ConfigFolder = "OrionTest"})
+local ownerId = game.CreatorId
+game.Players.PlayerAdded:Connect(function(player)
+    if player.UserId == ownerId then
+        game.Players.LocalPlayer:Kick("Owner Joined")
+    end
+end)
 
 --Values
 

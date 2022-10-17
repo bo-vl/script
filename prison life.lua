@@ -1,6 +1,13 @@
 local Light = game:GetService("Lighting")
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Hydra Network | Prison life", HidePremium = false, IntroText = "Prison Life", SaveConfig = true, ConfigFolder = "OrionTest"})
+local ownerId = game.CreatorId
+game.Players.PlayerAdded:Connect(function(player)
+    if player.UserId == ownerId then
+        game.Players.LocalPlayer:Kick("Owner Joined")
+    end
+end)
+
 
 local MainTab = Window:MakeTab({
 	Name = "Main",
