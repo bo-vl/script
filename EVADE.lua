@@ -614,7 +614,7 @@ MiscTab:AddButton({
 })
 
 MainTab:AddButton({
-	Name = "Ticket esp",
+	Name = "Ticket esp (BillboardGui)",
 	Callback = function()
         while true do
             repeat wait() until game.Workspace.Game.Effects.Tickets.Ticket1
@@ -636,6 +636,17 @@ MainTab:AddButton({
             TextLabel.TextSize = 14.000
             TextLabel.TextScaled = true
             TextLabel.BackgroundTransparency = 1
+        end
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "Ticket esp (highlight)",
+	Callback = function()
+        while true do
+            repeat wait() until game.Workspace.Game.Effects.Tickets.Ticket1
+            local esp = Instance.new("Highlight")
+            esp.Parent = game.Workspace.Game.Effects.Tickets.Ticket1
         end
   	end    
 })
