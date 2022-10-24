@@ -41,6 +41,7 @@ getgenv().Settings = {
     Speed = 1450,
     Jump = 3,
     reviveTime = 3,
+    TicketFarm = false,
 }
 
 local FindAI = function()
@@ -79,6 +80,18 @@ local revive = function()
         end)
     end
 end
+
+task.spawn(function()
+    while task.wait() do
+        if Settings.TicketFarm then
+            for i,v in pairs(game:GetService("Workspace").Game.Effects.Tickets:GetChildren()) do
+                if game.Players.LocalPlayer:GetAttribute('InMenu') ~= true then
+                    localplayer.Character.HumanoidRootPart.CFrame = CFrame.new(v:WaitForChild('HumanoidRootPart').Position)
+                end
+            end
+        end
+    end
+end)
 
 task.spawn(function()
     while task.wait() do
@@ -236,6 +249,14 @@ MainTab:AddToggle({
 	Default = false,
 	Callback = function(Value)
         Settings.afkfarm = Value
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Ticket Farm",
+	Default = false,
+	Callback = function(Value)
+        Settings.TicketFarm = Value
 	end    
 })
 
@@ -737,6 +758,24 @@ TeleportTab:AddButton({
     Callback = function()
         local TeleportService = game:GetService('TeleportService')
         GameId = 10808838353
+        TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+      end    
+})
+
+TeleportTab:AddButton({
+    Name = "Infection",
+    Callback = function()
+        local TeleportService = game:GetService('TeleportService')
+        GameId = 11353532384
+        TeleportService:Teleport(GameId, game.Players.LocalPlayer)
+      end    
+})
+
+TeleportTab:AddButton({
+    Name = "Pro",
+    Callback = function()
+        local TeleportService = game:GetService('TeleportService')
+        GameId = 11353528705
         TeleportService:Teleport(GameId, game.Players.LocalPlayer)
       end    
 })
