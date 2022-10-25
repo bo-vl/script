@@ -107,7 +107,6 @@ MainTab:AddButton({
   	end    
 })
 
-local TargetWalkspeed
 PlayerTab:AddSlider({
 	Name = "Speed",
 	Min = 0,
@@ -117,7 +116,7 @@ PlayerTab:AddSlider({
 	Increment = 1,
 	ValueName = "Walk Speed",
 	Callback = function(Value)
-		TargetWalkspeed = Value
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = WalkSpeed
 	end   
 })
 
@@ -173,11 +172,3 @@ PlayerTab:AddSlider({
         Workspace.Gravity = Gravity
     end
 })
-
-game:GetService("RunService").RenderStepped:Connect(function()
-    pcall(function()
-        if game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
-            game.Players.LocalPlayer.Character:TranslateBy(game.Players.LocalPlayer.Character.Humanoid.MoveDirection * TargetWalkspeed/500)
-        end
-    end)
-end)
