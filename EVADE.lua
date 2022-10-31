@@ -40,42 +40,6 @@ getgenv().Settings = {
     TicketFarm = false,
 }
 
-
-
-local TyphFun = {
-    ["Objects"] = {},
-    ["Functions"] = {},
-    ["Settings"] = {
-        OutlineColor = Color3.new(0,0,0),
-        AccentColor = Color3.new(255, 255, 255),
-        TextColor = Color3.new(255, 255, 255),
-        TeamMateColor = Color3.new(0, 255, 0),
-        EnemyColor = Color3.new(255, 0, 0),
-        MonsterColor = Color3.new(255, 0, 0),
-        TeamCheck = false,
-        Distance = 1000,
-        Enabled = true,
-        BoxNHealth = false,
-        LookLine = false,
-        Line = false,
-        Name = true,
-        Dist = false,
-        Tool = true,
-    },
-    ["Services"] = {
-        ["RunService"] = game:GetService("RunService"),
-        ["Players"] = game:GetService("Players"),
-        ["Workspace"] = game:GetService("Workspace"),
-        ["CoreGui"] = game:GetService("CoreGui"),
-        ["LocalPlayer"] = game:GetService("Players").LocalPlayer,
-        ["Camera"] = game:GetService("Workspace").CurrentCamera,
-        ["ViewPort"] = workspace.CurrentCamera.ViewportSize,
-        ["WorldToViewportPoint"] = game:GetService("Workspace").CurrentCamera.worldToViewportPoint,
-    },
-    ["ChangeableFunctions"] = {},
-}
-
-
 local GetDownedPlr = function()
     for i,v in pairs(WorkspacePlayers:GetChildren()) do
         if v:GetAttribute("Downed") then
