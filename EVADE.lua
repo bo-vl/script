@@ -9,9 +9,9 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shle
 setclipboard("https://link-hub.net/488828/key-for-hydra-network")
 
 local Window = Rayfield:CreateWindow({
-	Name = "Rayfield Example Window",
-	LoadingTitle = "Rayfield Interface Suite",
-	LoadingSubtitle = "by Sirius",
+	Name = "Evade",
+	LoadingTitle = "Hydra Network",
+	LoadingSubtitle = "by hydra#8270",
 	ConfigurationSaving = {
 		Enabled = true,
 		FolderName = nil,
