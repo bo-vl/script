@@ -198,8 +198,6 @@ local Toggle = T6:CreateToggle({
 	end,
 })
 
-local Paragraph = T1:CreateParagraph({Title = "Instructions", Content = "Press m on your keyboard to change the settings!"})
-
 local TargetWalkspeed
 local Slider = T1:CreateSlider({
 	Name = "WalkSpeed Slider",
