@@ -6,22 +6,32 @@ local localplayer = Players.LocalPlayer
 local GuiService = game:GetService("GuiService")
 local Light = game:GetService("Lighting")
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+setclipboard("https://link-hub.net/488828/key-for-hydra-network")
 
 local Window = Rayfield:CreateWindow({
-    Name = "Evade",
-    LoadingTitle = "Hydra network",
-    LoadingSubtitle = "by hydra#8270",
-    ConfigurationSaving = {
-        Enabled = true,
-        FileName = "Big Hub",
-    },
-    KeySystem = false,
-    KeySettings = {
-        Title = "Sirius Hub",
-        Subtitle = "Key System",
-        Note = "Join the discord (discord.gg/sirius)",
-        Key = "ABCDEF"
-    }
+	Name = "Rayfield Example Window",
+	LoadingTitle = "Rayfield Interface Suite",
+	LoadingSubtitle = "by Sirius",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = nil,
+		FileName = "Big Hub"
+	},
+        Discord = {
+        	Enabled = true,
+        	Invite = "YvwEyH2W6t",
+        	RememberJoins = true 
+        },
+	KeySystem = true,
+	KeySettings = {
+		Title = "Hydra Network",
+		Subtitle = "Key System",
+		Note = "Key link copied in clipboard!",
+		FileName = "SiriusKey",
+		SaveKey = false,
+		GrabKeyFromSite = true,
+		Key = "https://pastebin.com/raw/KcaMdP0i"
+	}
 })
 
 getgenv().Fakemoney = false
