@@ -5,6 +5,8 @@ local Players = game:GetService('Players')
 local localplayer = Players.LocalPlayer
 local GuiService = game:GetService("GuiService")
 local Light = game:GetService("Lighting")
+local Time = os.clock()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 setclipboard("https://link-hub.net/488828/key-for-hydra-network")
 
@@ -696,5 +698,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
         end
     end)
 end)
+
+local notif = Notification.new("success", "Success", "Noobhub took " .. math.round(os.clock() - Time) .. "s to load!")
+notif:deleteTimeout(3)
 
 Rayfield:LoadConfiguration()
