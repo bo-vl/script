@@ -23,8 +23,6 @@ local GameTable = {
     [155615604] = "https://raw.githubusercontent.com/Robobo2022/script/main/prison%20life.lua",
     [4991214437] = "https://raw.githubusercontent.com/Robobo2022/script/main/town.lua",
     [5023820864] = "https://raw.githubusercontent.com/Robobo2022/script/main/trade%20tower.lua",
-    [11353532384] = "https://raw.githubusercontent.com/Robobo2022/script/main/Bloxfruits.lua",
-    [11353528705] = "https://raw.githubusercontent.com/Robobo2022/script/main/Bloxfruits.lua",
     [11353532384] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua",
     [11353528705] = "https://raw.githubusercontent.com/Robobo2022/script/main/EVADE.lua",
 }
