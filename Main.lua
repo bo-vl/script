@@ -25,6 +25,7 @@ local GameTable = {
     [5023820864] = "https://raw.githubusercontent.com/Robobo2022/script/main/trade%20tower.lua",
     [11353532384] = "https://raw.githubusercontent.com/Robobo2022/script/main/Bloxfruits.lua",
     [11353528705] = "https://raw.githubusercontent.com/Robobo2022/script/main/Bloxfruits.lua",
+    [11346342371] = "https://raw.githubusercontent.com/spookysss/MakingMemesInYourBasement/main/script.lua"
 }
 
 
