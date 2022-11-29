@@ -5,7 +5,7 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shle
 getgenv().money = false
 
 task.spawn(function()
-    while task.wait(0) do
+    while task.wait() do
         if getgenv().money == true then
             game:GetService("ReplicatedStorage").GetCash:FireServer()
         end
