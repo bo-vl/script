@@ -26,6 +26,7 @@ local GameTable = {
     [11353532384] = "https://raw.githubusercontent.com/Robobo2022/script/main/Bloxfruits.lua",
     [11353528705] = "https://raw.githubusercontent.com/Robobo2022/script/main/Bloxfruits.lua",
     [11346342371] = "https://raw.githubusercontent.com/spookysss/MakingMemesInYourBasement/main/script.lua",
+    [9585800888] = "https://raw.githubusercontent.com/Robobo2022/script/main/PlaneCashPhysics.lua",
 }
 
 
@@ -38,7 +39,6 @@ if GameTable[game.PlaceId] == nil then
     })
     
     task.delay(2, function()
-        setclipboard("https://discord.gg/k9a4zym5uG")
             CoreGui:SetCore("SendNotification", {
             Title = "Loading";
             Text = "Game was not supported so its now loading Hydra Network Universal.";
