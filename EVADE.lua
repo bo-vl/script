@@ -1,9 +1,10 @@
+
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 wait(1)
-local WorkspacePlayers = game:GetService("Workspace").Game.Players
+local cam = workspace.CurrentCamera
+local rs = game:GetService'RunService'
 local Players = game:GetService('Players')
 local localplayer = Players.LocalPlayer
-local GuiService = game:GetService("GuiService")
 local Light = game:GetService("Lighting")
 local Time = os.clock()
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
@@ -108,7 +109,26 @@ local T2 = Window:CreateTab("Misc")
 local T4 = Window:CreateTab("Tp")
 local T5 = Window:CreateTab("Fun")
 local T6 = Window:CreateTab("Farms")
+local T8 = Window:CreateTab("Bot ESP")
 local T7 = Window:CreateTab("Credits")
+
+local Toggle = T8:CreateToggle({
+	Name = "Bot Esp",
+	CurrentValue = false,
+	Flag = "Toggle1",
+	Callback = function(Value)
+        getgenv().toggleespmpt = Value
+	end,
+})
+
+local ColorPicker = T8:CreateColorPicker({
+    Name = "Esp Color",
+    Color = Color3.fromRGB(255,255,255),
+    Flag = "ColorPicker1",
+    Callback = function(Value)
+        getgenv().mptespcolour = Value
+    end
+})
 
 local Toggle = T6:CreateToggle({
 	Name = "Afk Farm",
@@ -474,6 +494,43 @@ local Keybind = T5:CreateKeybind({
         game:GetService("ReplicatedStorage").Events.Vote:FireServer(ohNumber1)
 	end,
 })
+
+function esp(plr)
+   if game:GetService'Players':GetPlayerFromCharacter(plr) == nil then
+    local rat = Drawing.new("Line")
+        rs.RenderStepped:Connect(function()
+            if plr:FindFirstChild'HumanoidRootPart' then
+                local vector,screen = cam:WorldToViewportPoint(plr.HumanoidRootPart.Position)
+                if screen then
+                    rat.Visible = toggleespmpt
+                    rat.From = Vector2.new(cam.ViewportSize.X / 2,cam.ViewportSize.Y / 1)
+                    rat.To = Vector2.new(vector.X,vector.Y)
+                    rat.Color = getgenv().mptespcolour
+                    rat.Thickness = getgenv().mptespthickness
+                    else
+                        rat.Visible = false
+                end
+                else
+                    pcall(function()
+                    rat.Visible = false
+                    end)
+            end
+                if not plr:FindFirstChild'HumanoidRootPart' or not plr:FindFirstChild'HumanoidRootPart':IsDescendantOf(game:GetService'Workspace') then
+                    pcall(function()
+                    rat:Remove()
+                    end)
+            end
+        end)
+   end
+end
+
+for i,v in pairs(game:GetService'Workspace'.Game.Players:GetChildren()) do
+    esp(v)
+end
+
+game:GetService'Workspace'.Game.Players.ChildAdded:Connect(function(plr)
+    esp(plr)
+end)
 
 local Paragraph = T7:CreateParagraph({Title = "Owner/Main Dev", Content = "hydra#8270"})
 local Paragraph = T7:CreateParagraph({Title = "Credits", Content = "FeIix and ss.spooky.ss"})
