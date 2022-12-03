@@ -99,6 +99,7 @@ local Window = Rayfield:CreateWindow({
 local T1 = Window:CreateTab("Player", 4483362458)
 local T2 = Window:CreateTab("Power-ups", 4483362458)
 local T3 = Window:CreateTab("Fun", 4483362458)
+local T4 = Window:CreateTab("Credits", 4483362458)
 
 local TargetWalkspeed
 local Slider = T1:CreateSlider({
@@ -242,6 +243,9 @@ T2:CreateToggle({
 
 
 
+task = coroutine.create(fuck)
+coroutine.resume(task)
+
 game:GetService("RunService").RenderStepped:Connect(function()
     pcall(function()
         if game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
@@ -249,6 +253,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
         end
     end)
 end)
+
+local Paragraph = T4:CreateParagraph({Title = "The devs", Content = "Hydra#8270 and ss.spooky.ss#0003"})
 
 local notif = Notification.new("success", "Success", "HydraNetworkv2 took " .. math.round(os.clock() - Time) .. "s to load!")
 notif:deleteTimeout(3)
