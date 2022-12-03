@@ -99,6 +99,7 @@ local Window = Rayfield:CreateWindow({
 local T1 = Window:CreateTab("Player", 4483362458)
 local T2 = Window:CreateTab("Power-ups", 4483362458)
 local T3 = Window:CreateTab("Fun", 4483362458)
+local T4 = Window:CreateTab("Credits", 4483362458)
 
 local TargetWalkspeed
 local Slider = T1:CreateSlider({
@@ -241,6 +242,7 @@ T2:CreateToggle({
 })
 
 
+local Paragraph = T4:CreateParagraph({Title = "The Credits", Content = "hydra#8270 and ss.spooky.ss#0003"})
 
 game:GetService("RunService").RenderStepped:Connect(function()
     pcall(function()
