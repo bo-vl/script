@@ -8,6 +8,33 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shle
 getgenv().Drink = false
 getgenv().Eat = false
 getgenv().Drop = false
+local banana = false
+local landmine = false
+
+local function fuck()
+    local function fuckingdestroyall(v)
+        if v.Hitbox then
+            v.Hitbox:Destroy()
+        end
+    end
+    for v in game:GetService("Workspace").Multiplayer:GetChildren() do
+        if v then
+            for v in v.Geometry.Parts:GetChildren() do
+                if banana == true then
+                    if v.Name == "Banana" and v:IsA("Model") then
+                        fuckingdestroyall(v)
+                    end
+                elseif landmine == true then
+                    if v.Name == "Landmine" and v:IsA("Model") then
+                        fuckingdestroyall(v)
+                    end
+                end
+            end
+        end
+    end
+    task.wait(0.01)
+    fuck()
+end
 
 task.spawn(function()
 	while task.wait() do
@@ -197,6 +224,21 @@ local Toggle = T3:CreateToggle({
 	end,
 })
 
+T2:CreateToggle({
+	Name = "No Banana",
+	CurrentValue = false,
+	Callback = function(Value)
+        banana = Value
+    end
+})
+
+T2:CreateToggle({
+	Name = "No Landmine",
+	CurrentValue = false,
+	Callback = function(Value)
+        landmine = Value
+    end
+})
 
 
 
