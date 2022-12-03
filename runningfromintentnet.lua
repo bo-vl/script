@@ -8,33 +8,6 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shle
 getgenv().Drink = false
 getgenv().Eat = false
 getgenv().Drop = false
-local banana = false
-local landmine = false
-
-local function fuck()
-    local function fuckingdestroyall(v)
-        if v.Hitbox then
-            v.Hitbox:Destroy()
-        end
-    end
-    for v in game:GetService("Workspace").Multiplayer:GetChildren() do
-        if v then
-            for v in v.Geometry.Parts:GetChildren() do
-                if banana == true then
-                    if v.Name == "Banana" and v:IsA("Model") then
-                        fuckingdestroyall(v)
-                    end
-                elseif landmine == true then
-                    if v.Name == "Landmine" and v:IsA("Model") then
-                        fuckingdestroyall(v)
-                    end
-                end
-            end
-        end
-    end
-    task.wait(0.01)
-    fuck()
-end
 
 task.spawn(function()
 	while task.wait() do
@@ -99,7 +72,6 @@ local Window = Rayfield:CreateWindow({
 local T1 = Window:CreateTab("Player", 4483362458)
 local T2 = Window:CreateTab("Power-ups", 4483362458)
 local T3 = Window:CreateTab("Fun", 4483362458)
-local T4 = Window:CreateTab("Credits", 4483362458)
 
 local TargetWalkspeed
 local Slider = T1:CreateSlider({
@@ -225,26 +197,8 @@ local Toggle = T3:CreateToggle({
 	end,
 })
 
-T2:CreateToggle({
-	Name = "No Banana",
-	CurrentValue = false,
-	Callback = function(Value)
-        banana = Value
-    end
-})
-
-T2:CreateToggle({
-	Name = "No Landmine",
-	CurrentValue = false,
-	Callback = function(Value)
-        landmine = Value
-    end
-})
 
 
-
-task = coroutine.create(fuck)
-coroutine.resume(task)
 
 game:GetService("RunService").RenderStepped:Connect(function()
     pcall(function()
@@ -253,8 +207,6 @@ game:GetService("RunService").RenderStepped:Connect(function()
         end
     end)
 end)
-
-local Paragraph = T4:CreateParagraph({Title = "The devs", Content = "Hydra#8270 and ss.spooky.ss#0003"})
 
 local notif = Notification.new("success", "Success", "HydraNetworkv2 took " .. math.round(os.clock() - Time) .. "s to load!")
 notif:deleteTimeout(3)
