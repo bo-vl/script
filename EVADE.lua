@@ -534,7 +534,6 @@ end)
 
 local Paragraph = T7:CreateParagraph({Title = "Owner/Main Dev", Content = "hydra#8270"})
 local Paragraph = T7:CreateParagraph({Title = "Credits", Content = "FeIix and ss.spooky.ss"})
-local Paragraph = T7:CreateParagraph({Title = "Credits", Content = "xCLY And batusd"})
 local Paragraph = T7:CreateParagraph({Title = "Credits", Content = "Truncated Cuboctahedron"})
 
 game:GetService("RunService").RenderStepped:Connect(function()
