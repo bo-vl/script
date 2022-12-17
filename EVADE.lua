@@ -112,6 +112,15 @@ local T6 = Window:CreateTab("Farms")
 local T8 = Window:CreateTab("Bot ESP")
 local T7 = Window:CreateTab("Credits")
 
+local Toggle = T2:CreateToggle({
+	Name = "Show Vip menu",
+	CurrentValue = false,
+	Flag = "Toggle1",
+	Callback = function(Value)
+        game:GetService("Players").LocalPlayer.PlayerGui.VIPMenu.Enabled = Value
+	end,
+})
+
 local Toggle = T8:CreateToggle({
 	Name = "Bot Esp",
 	CurrentValue = false,
@@ -494,6 +503,9 @@ local Keybind = T5:CreateKeybind({
         game:GetService("ReplicatedStorage").Events.Vote:FireServer(ohNumber1)
 	end,
 })
+
+
+
 
 function esp(plr)
    if game:GetService'Players':GetPlayerFromCharacter(plr) == nil then
