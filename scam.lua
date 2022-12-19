@@ -62,3 +62,20 @@ local Toggle = Tab:CreateToggle({
         AutoFarm = Value
    end,
 })
+
+local Toggle = Tab:CreateToggle({
+   Name = "Turn on Sprint",
+   Info = "Disables sprinting buy promt",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      if Value == true then
+         game:GetService("Players").LocalPlayer.Data.Sprint.Value = 1
+      else
+         game:GetService("Players").LocalPlayer.Data.Sprint.Value = 0
+      end
+   end,
+})
+
+
+
