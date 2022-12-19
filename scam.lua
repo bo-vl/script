@@ -52,7 +52,7 @@ local transferspeed = game:GetService("Players").LocalPlayer.Data.TransferSpeedL
 local scamvalue = game:GetService("Players").LocalPlayer.Data.ScamValueLevel.Value
 
 task.spawn(function()
-   while task.wait(TransferSpeed) do
+   while task.wait(4) do
       if FasterScamming == true then
          local ohString1 = "ScamSpeed"
          local ohNumber2 = (fasterscamming)
@@ -62,7 +62,7 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-   while task.wait(TransferSpeed) do
+   while task.wait(4) do
       if TransferSpeed == true then
          local ohString1 = "TransferSpeed"
          local ohNumber2 = (transferspeed)
@@ -72,7 +72,7 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-   while task.wait(TransferSpeed) do
+   while task.wait(4) do
       if ScamValue == true then
          local ohString1 = "ScamValue"
          local ohNumber2 = (scamvalue)
@@ -83,13 +83,13 @@ end)
 
 
 task.spawn(function()
-	while task.wait(TransferSpeed) do
+	while task.wait(4.5) do
 		if getgenv().AutoFarm == true then
             local number = game:GetService("Players").LocalPlayer.GeneratedNumber.Value
             local ohNumber1 = (number)
             game:GetService("ReplicatedStorage").Events.CheckNumber:FireServer(ohNumber1)
 
-            wait(5)
+            wait(4.4)
             if number == number then
                Rayfield:Notify({
                   Title = "Generated Number",
@@ -105,13 +105,6 @@ task.spawn(function()
         end
 	end
 end)
-
-
-
-local ohString1 = "ScamSpeed"
-local ohNumber2 = 4
-
-game:GetService("ReplicatedStorage").Events.UpgradeItem:FireServer(ohString1, ohNumber2)
 
 local Toggle = Tab:CreateToggle({
    Name = "Scam call Auto Farm",
