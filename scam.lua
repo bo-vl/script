@@ -52,7 +52,7 @@ local transferspeed = game:GetService("Players").LocalPlayer.Data.TransferSpeedL
 local scamvalue = game:GetService("Players").LocalPlayer.Data.ScamValueLevel.Value
 
 task.spawn(function()
-   while task.wait() do
+   while task.wait(TransferSpeed) do
       if FasterScamming == true then
          local ohString1 = "ScamSpeed"
          local ohNumber2 = (fasterscamming)
@@ -62,7 +62,7 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-   while task.wait() do
+   while task.wait(TransferSpeed) do
       if TransferSpeed == true then
          local ohString1 = "TransferSpeed"
          local ohNumber2 = (transferspeed)
@@ -72,7 +72,7 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-   while task.wait() do
+   while task.wait(TransferSpeed) do
       if ScamValue == true then
          local ohString1 = "ScamValue"
          local ohNumber2 = (scamvalue)
