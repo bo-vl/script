@@ -6,7 +6,7 @@ for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
    end
 end
 
-game:GetService("Players").LocalPlayer.PlayerGui.Notifications:Destroy()
+--game:GetService("Players").LocalPlayer.PlayerGui.Notifications:Destroy()
 game:GetService("Players").LocalPlayer.PlayerGui.PCGUI.Frame.Upgrades.Update:Fire()
 game:GetService("ReplicatedStorage").Events.GenerateNumber:FireServer()
 wait(2)
@@ -83,11 +83,8 @@ end)
 
 
 task.spawn(function()
-	while task.wait() do
+	while task.wait(4.5) do
 		if getgenv().AutoFarm == true then
-         while AutoFarm == true do task.wait()
-            game:GetService("ReplicatedStorage").Events.GenerateNumber:FireServer()
-         end
             local number = game:GetService("Players").LocalPlayer.GeneratedNumber.Value
             local ohNumber1 = (number)
             game:GetService("ReplicatedStorage").Events.CheckNumber:FireServer(ohNumber1)
