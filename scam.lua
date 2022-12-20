@@ -6,7 +6,7 @@ for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
    end
 end
 
---game:GetService("Players").LocalPlayer.PlayerGui.Notifications:Destroy()
+game:GetService("Players").LocalPlayer.PlayerGui.Notifications:Destroy()
 game:GetService("Players").LocalPlayer.PlayerGui.PCGUI.Frame.Upgrades.Update:Fire()
 game:GetService("ReplicatedStorage").Events.GenerateNumber:FireServer()
 wait(2)
