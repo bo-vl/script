@@ -28,7 +28,8 @@ local GameTable = {
     [11346342371] = "https://raw.githubusercontent.com/spookysss/MakingMemesInYourBasement/main/script.lua",
     [9585800888] = "https://raw.githubusercontent.com/Robobo2022/script/main/PlaneCashPhysics.lua",
     [11195100561] = "https://raw.githubusercontent.com/Robobo2022/script/main/runningfromintentnet.lua",
-    [11330149751] = "https://raw.githubusercontent.com/Robobo2022/script/main/scam.lua"
+    [11330149751] = "https://raw.githubusercontent.com/Robobo2022/script/main/scam.lua",
+    [2248408710] = "https://raw.githubusercontent.com/Robobo2022/script/main/Destruction.lua"
 }
 
 
