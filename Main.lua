@@ -29,7 +29,8 @@ local GameTable = {
     [9585800888] = "https://raw.githubusercontent.com/Robobo2022/script/main/PlaneCashPhysics.lua",
     [11195100561] = "https://raw.githubusercontent.com/Robobo2022/script/main/runningfromintentnet.lua",
     [11330149751] = "https://raw.githubusercontent.com/Robobo2022/script/main/scam.lua",
-    [2248408710] = "https://raw.githubusercontent.com/Robobo2022/script/main/Destruction.lua"
+    [2248408710] = "https://raw.githubusercontent.com/Robobo2022/script/main/Destruction.lua",
+    [2768379856] = "https://raw.githubusercontent.com/Robobo2022/script/main/3008.lua"
 }
 
 
