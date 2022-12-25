@@ -33,7 +33,7 @@ local Window = Rayfield:CreateWindow({
 		FileName = "SiriusKey",
 		SaveKey = false,
 		GrabKeyFromSite = false,
-		Key = "sdjkfhlksjdhflksjhadlfkjhd"
+		Key = "HH6NEYnZ5vp8zZjzMtcX"
 	}
 })
 
