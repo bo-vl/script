@@ -32,8 +32,8 @@ local Window = Rayfield:CreateWindow({
 		Note = "Key link copied in clipboard!",
 		FileName = "SiriusKey",
 		SaveKey = false,
-		GrabKeyFromSite = false,
-		Key = "HH6NEYnZ5vp8zZjzMtcX"
+		GrabKeyFromSite = true,
+		Key = "https://pastebin.com/raw/rfFkzXWN"
 	}
 })
 
