@@ -505,11 +505,10 @@ local Keybind = T5:CreateKeybind({
 })
 
 
-
-
 function esp(plr)
    if game:GetService'Players':GetPlayerFromCharacter(plr) == nil then
     local rat = Drawing.new("Line")
+    local esp2 = Instance.new("Highlight")
         rs.RenderStepped:Connect(function()
             if plr:FindFirstChild'HumanoidRootPart' then
                 local vector,screen = cam:WorldToViewportPoint(plr.HumanoidRootPart.Position)
