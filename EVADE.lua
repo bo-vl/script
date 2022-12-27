@@ -1,3 +1,4 @@
+local reviveFarmEnabled = false
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 wait(1)
 local cam = workspace.CurrentCamera
