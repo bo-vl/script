@@ -1,4 +1,3 @@
-
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 wait(1)
 local cam = workspace.CurrentCamera
@@ -46,6 +45,10 @@ getgenv().Settings = {
     NoCameraShake = false,
     Speed = 1450,
 }
+
+function respawn()
+    game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+end
 
 task.spawn(function()
     while task.wait() do
@@ -145,6 +148,65 @@ local Toggle = T6:CreateToggle({
 	Flag = "Toggle1", 
 	Callback = function(Value)
         Settings.afkfarm = Value
+	end,
+})
+
+local function isDowned(plr)
+    if plr and plr.Character and plr.Character:GetAttribute("Downed") then return true end
+    return false
+end
+
+local function isCarried(plr)
+    local plr = workspace.Game.Players:FindFirstChild(plr.Name)
+    if plr then
+        return plr:FindFirstChild("CarriedBy") ~= nil
+    end
+    return false
+end
+
+local function revive(plr, status)
+    return game:GetService("ReplicatedStorage").Events.Revive.RevivePlayer:FireServer(plr.Name, status)
+end
+
+local Toggle = T6:CreateToggle({
+	Name = "Revive AutoFarm",
+	CurrentValue = false,
+	Flag = "Toggle1", 
+	Callback = function(Value)
+        reviveFarmEnabled = Value
+        if Value then
+            coroutine.wrap(function()
+                repeat
+                    local suc,res = pcall(function()
+                        for _,v in next, game.Players:GetPlayers() do
+                            if v and v ~= localplayer and isDowned(v) and not isCarried(v) then
+                                plr = v
+                                task.spawn(function()
+                                    for _ = 1,30 do
+                                        if isDowned(localplayer) then respawn() end
+                                        if plr ~= v or not isDowned(v) or isCarried(v) then return end
+                                        if localplayer and localplayer.Character and localplayer.Character:FindFirstChild("HumanoidRootPart") and v and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
+                                            localplayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+                                        end
+                                        task.wait(.0866666667)
+                                    end
+                                end)
+                                task.wait(.2)
+                                revive(v, false)
+                                task.wait(2.2)
+                                for _ = 1,2 do
+                                    revive(v, true)
+                                    task.wait(.1)
+                                end
+                                task.wait(.3)
+                            end
+                        end
+                    end)
+                    if not suc then warn("[ReviveAutoFarm Error]: "..res) end
+                    task.wait()
+                until reviveFarmEnabled == false
+            end)()
+        end
 	end,
 })
 
@@ -377,7 +439,7 @@ local Keybind = T2:CreateKeybind({
 	HoldToInteract = false,
 	Flag = "Keybind1",
 	Callback = function(Keybind)
-        game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+        respawn()
 	end,
 })
 
