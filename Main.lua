@@ -32,7 +32,29 @@ local GameTable = {
     [2248408710] = "https://raw.githubusercontent.com/Robobo2022/script/main/Destruction.lua",
     [2768379856] = "https://raw.githubusercontent.com/Robobo2022/script/main/3008.lua",
     [3857052864] = "https://raw.githubusercontent.com/Robobo2022/script/main/RakeFanMade.lua",
-    [21532277] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua"
+    [21532277] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [709461761] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [1213821265] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [1231303427] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [1234408990] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [1242009557] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [1257393236] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [1269513822] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [1419274802] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [1448835396] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [1470780246] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [1549086835] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [2083817401] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [2088934656] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [2511620169] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [2591382751] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [2840013718] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [3107097964] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [5431100846] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [5431104427] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [5891659534] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [10605039538] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
+    [6537140247] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua"
 }
 
 
