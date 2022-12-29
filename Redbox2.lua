@@ -1,6 +1,12 @@
 local localname = game:GetService("Players").LocalPlayer.Name
 local Light = game:GetService("Lighting")
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+s = game:GetService("ReplicatedStorage").Assets.Raycast.Melee
+z = game:GetService("ReplicatedStorage").Assets.Raycast.Range
+rs = require(s)
+rz = require(z)
+
+
 
 local Window = Rayfield:CreateWindow({
 	Name = "Redbox",
@@ -83,6 +89,7 @@ end)
 
 local T1 = Window:CreateTab("Main")
 local T2 = Window:CreateTab("Player")
+local T3 = Window:CreateTab("Other")
 
 local Keybind = T1:CreateKeybind({
     Name = "Inf ammo(equipe Weapon before pressing)",
@@ -158,6 +165,22 @@ local Toggle = T1:CreateToggle({
 	CurrentValue = false,
 	Callback = function(Value)
         Disabled = Value
+	end,
+})
+
+local Toggle = T3:CreateToggle({
+	Name = "Melee Debug mode",
+	CurrentValue = false,
+	Callback = function(Value)
+        rs.DebugMode = Value
+	end,
+})
+
+local Toggle = T3:CreateToggle({
+	Name = "Gun Debug mode",
+	CurrentValue = false,
+	Callback = function(Value)
+        rs.VisualizeCasts= Value
 	end,
 })
 
