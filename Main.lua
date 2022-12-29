@@ -31,7 +31,8 @@ local GameTable = {
     [11330149751] = "https://raw.githubusercontent.com/Robobo2022/script/main/scam.lua",
     [2248408710] = "https://raw.githubusercontent.com/Robobo2022/script/main/Destruction.lua",
     [2768379856] = "https://raw.githubusercontent.com/Robobo2022/script/main/3008.lua",
-    [3857052864] = "https://raw.githubusercontent.com/Robobo2022/script/main/RakeFanMade.lua"
+    [3857052864] = "https://raw.githubusercontent.com/Robobo2022/script/main/RakeFanMade.lua",
+    [21532277] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua"
 }
 
 
