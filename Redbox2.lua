@@ -180,7 +180,8 @@ local Toggle = T3:CreateToggle({
 	Name = "Gun Debug mode",
 	CurrentValue = false,
 	Callback = function(Value)
-        rs.VisualizeCasts= Value
+        rz.DebugMode = Value
+        rz.VisualizeCasts= Value
 	end,
 })
 
