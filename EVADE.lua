@@ -1,23 +1,23 @@
 
 ([[
-    This script has been licensed using Luauth
-Unauthorized distribution of this script is forbidden.
-Any attempts at tampering, reverse engineering or modifying this script's 
-internal logic will result in a global ban, and make you blacklisted from
-every single script that has been licensed with Luauth
+                This script has been licensed using Luauth
+            Unauthorized distribution of this script is forbidden.
+      Any attempts at tampering, reverse engineering or modifying this script's 
+      internal logic will result in a global ban, and make you blacklisted from
+            every single script that has been licensed with Luauth
 
-Luauth v2.7 for Roblox, #1 lua whitelisting system by Federal#9999
-       https://luauth.xyz/
+        Luauth v2.7 for Roblox, #1 lua whitelisting system by Federal#9999
+				   https://luauth.xyz/
 
-_   _           _             _   _      _                      _    
-| | | |_   _  __| |_ __ __ _  | \ | | ___| |___      _____  _ __| | __
-| |_| | | | |/ _` | '__/ _` | |  \| |/ _ \ __\ \ /\ / / _ \| '__| |/ /
-|  _  | |_| | (_| | | | (_| | | |\  |  __/ |_ \ V  V / (_) | |  |   < 
-|_| |_|\__, |\__,_|_|  \__,_| |_| \_|\___|\__| \_/\_/ \___/|_|  |_|\_\
-|___/                                                          
+      _   _           _             _   _      _                      _    
+     | | | |_   _  __| |_ __ __ _  | \ | | ___| |___      _____  _ __| | __
+     | |_| | | | |/ _` | '__/ _` | |  \| |/ _ \ __\ \ /\ / / _ \| '__| |/ /
+     |  _  | |_| | (_| | | | (_| | | |\  |  __/ |_ \ V  V / (_) | |  |   < 
+     |_| |_|\__, |\__,_|_|  \__,_| |_| \_|\___|\__| \_/\_/ \___/|_|  |_|\_\
+            |___/                                                          
 
-                                         
-     Script ID: 8bf5545ad421e0e1847500eb2ff1e8ac
+                                                     
+                 Script ID: 8bf5545ad421e0e1847500eb2ff1e8ac
 ]])
 
 
