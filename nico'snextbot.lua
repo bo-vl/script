@@ -3,8 +3,10 @@ Event:FireServer()
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 local Light = game:GetService("Lighting")
 
+setclipboard("https://link-hub.net/488828/key-for-hydra-network")
+
 local Window = Rayfield:CreateWindow({
-	Name = "Nico's Nextbots",
+	Name = "Nico's Next Bot",
 	LoadingTitle = "Hydra Network",
 	LoadingSubtitle = "by hydra#8270",
 	ConfigurationSaving = {
@@ -17,7 +19,7 @@ local Window = Rayfield:CreateWindow({
         	Invite = "YvwEyH2W6t",
         	RememberJoins = true 
         },
-	KeySystem = false,
+	KeySystem = true,
 	KeySettings = {
 		Title = "Hydra Network",
 		Subtitle = "Key System",
@@ -25,7 +27,7 @@ local Window = Rayfield:CreateWindow({
 		FileName = "SiriusKey",
 		SaveKey = false,
 		GrabKeyFromSite = true,
-		Key = "https://pastebin.com/raw/KcaMdP0i"
+		Key = "https://pastebin.com/raw/rfFkzXWN"
 	}
 })
 
