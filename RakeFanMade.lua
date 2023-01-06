@@ -4,31 +4,33 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local Light = game:GetService("Lighting")
 local esp = Instance.new("Highlight")
 
+setclipboard("https://link-hub.net/488828/key-for-hydra-network")
+
 local Window = Rayfield:CreateWindow({
-    Name = "The Rake: Fan Remake",
-    LoadingTitle = "Hydra Network",
-    LoadingSubtitle = "by Hydra#8270",
-    ConfigurationSaving = {
-       Enabled = true,
-       FolderName = nil,
-       FileName = "Big Hub"
-    },
-    Discord = {
-       Enabled = true,
-       Invite = "YvwEyH2W6t",
-       RememberJoins = true
-    },
-    KeySystem = false,
-    KeySettings = {
-       Title = "Sirius Hub",
-       Subtitle = "Key System",
-       Note = "Join the discord (discord.gg/sirius)",
-       FileName = "SiriusKey",
-       SaveKey = true,
-       GrabKeyFromSite = false, 
-       Key = "Hello"
-    }
- })
+	Name = "Rake Fan Made",
+	LoadingTitle = "Hydra Network",
+	LoadingSubtitle = "by hydra#8270",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = nil,
+		FileName = "Big Hub"
+	},
+        Discord = {
+        	Enabled = true,
+        	Invite = "YvwEyH2W6t",
+        	RememberJoins = true 
+        },
+	KeySystem = true,
+	KeySettings = {
+		Title = "Hydra Network",
+		Subtitle = "Key System",
+		Note = "Key link copied in clipboard!",
+		FileName = "SiriusKey",
+		SaveKey = false,
+		GrabKeyFromSite = true,
+		Key = "https://pastebin.com/raw/rfFkzXWN"
+	}
+})
 
  local Tab = Window:CreateTab("Main")
 

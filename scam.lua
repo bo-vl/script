@@ -13,32 +13,33 @@ wait(2)
 
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/UI-Interface/CustomFIeld/main/RayField.lua'))()
 
-local Window = Rayfield:CreateWindow({
-    Name = "making scam calls to save your best friend tycoon",
-    LoadingTitle = "Hydra Network",
-    LoadingSubtitle = "by Hydra#8270",
-    ConfigurationSaving = {
-       Enabled = true,
-       FolderName = nil,
-       FileName = "Big Hub"
-    },
-    Discord = {
-       Enabled = true,
-       Invite = "YvwEyH2W6t",
-       RememberJoins = true
-    },
-    KeySystem = false,
-    KeySettings = {
-       Title = "Sirius Hub",
-       Subtitle = "Key System",
-       Note = "Join the discord (discord.gg/sirius)",
-       FileName = "SiriusKey",
-       SaveKey = true,
-       GrabKeyFromSite = false, 
-       Key = "Hello"
-    }
- })
+setclipboard("https://link-hub.net/488828/key-for-hydra-network")
 
+local Window = Rayfield:CreateWindow({
+	Name = "Makking Scam Calls",
+	LoadingTitle = "Hydra Network",
+	LoadingSubtitle = "by hydra#8270",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = nil,
+		FileName = "Big Hub"
+	},
+        Discord = {
+        	Enabled = true,
+        	Invite = "YvwEyH2W6t",
+        	RememberJoins = true 
+        },
+	KeySystem = true,
+	KeySettings = {
+		Title = "Hydra Network",
+		Subtitle = "Key System",
+		Note = "Key link copied in clipboard!",
+		FileName = "SiriusKey",
+		SaveKey = false,
+		GrabKeyFromSite = true,
+		Key = "https://pastebin.com/raw/rfFkzXWN"
+	}
+})
 local Tab = Window:CreateTab("Auto Farm", 11866433904)
 
 getgenv().AutoFarm = false

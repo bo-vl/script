@@ -11,7 +11,7 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shle
 setclipboard("https://link-hub.net/488828/key-for-hydra-network")
 
 local Window = Rayfield:CreateWindow({
-	Name = "Evade",
+	Name = "Jump Simulator",
 	LoadingTitle = "Hydra Network",
 	LoadingSubtitle = "by hydra#8270",
 	ConfigurationSaving = {

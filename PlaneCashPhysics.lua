@@ -12,29 +12,31 @@ task.spawn(function()
     end
 end)
 
+setclipboard("https://link-hub.net/488828/key-for-hydra-network")
+
 local Window = Rayfield:CreateWindow({
-	Name = "Plane crash physics",
-	LoadingTitle = "Hydra Network v2",
+	Name = "PLane Cash Physics",
+	LoadingTitle = "Hydra Network",
 	LoadingSubtitle = "by hydra#8270",
 	ConfigurationSaving = {
 		Enabled = true,
-		FolderName = nil, 
+		FolderName = nil,
 		FileName = "Big Hub"
 	},
         Discord = {
         	Enabled = true,
-        	Invite = "k9a4zym5uG", 
+        	Invite = "YvwEyH2W6t",
         	RememberJoins = true 
         },
-	KeySystem = false, 
+	KeySystem = true,
 	KeySettings = {
-		Title = "Sirius Hub",
+		Title = "Hydra Network",
 		Subtitle = "Key System",
-		Note = "Join the discord (discord.gg/sirius)",
+		Note = "Key link copied in clipboard!",
 		FileName = "SiriusKey",
-		SaveKey = true,
-		GrabKeyFromSite = false, 
-		Key = "Hello"
+		SaveKey = false,
+		GrabKeyFromSite = true,
+		Key = "https://pastebin.com/raw/rfFkzXWN"
 	}
 })
 
