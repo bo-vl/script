@@ -56,7 +56,7 @@ local Toggle = Tab:CreateToggle({
  })
 
 local Slider = Tab:CreateSlider({
-    Name = "Brithness",
+    Name = "brightness",
     Range = {0, 10},
     Increment = 10,
     Suffix = "Value",
