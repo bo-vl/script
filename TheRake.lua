@@ -88,22 +88,6 @@ local Slider = Tab:CreateSlider({
     end,
 })
 
-local Toggle = Tab:CreateToggle({
-    Name = "stamina hack",
-    CurrentValue = false,
-    Flag = "Toggle1",
-    Callback = function(Value)
-        if Value then
-            for i,v in next, getgc(true) do
-                if type(v) == "table" and rawget(v, "stamina") then
-                    if v.stamina <= 99 then
-                        v.stamina = 100
-                    end
-                end
-            end
-        end
-    end,
- })
 
 local Keybind = Tab:CreateKeybind({
     Name = "Give 100 stamina",
