@@ -57,7 +57,7 @@ local GameTable = {
     [6537140247] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
     [2317712696] = "https://raw.githubusercontent.com/Robobo2022/script/main/thewildwest.lua",
     [11606818992] = "https://raw.githubusercontent.com/Robobo2022/script/main/steepsteps.lua",
-    [2413927524] = "https://raw.githubusercontent.com/Robobo2022/script/main/Rake.lua"
+    [2413927524] = "https://raw.githubusercontent.com/Robobo2022/script/main/TheRake.lua"
 }
 
 
@@ -78,10 +78,5 @@ if GameTable[game.PlaceId] == nil then
         loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/Universal.lua"), true))()
     end)
 else
-    CoreGui:SetCore("SendNotification", {
-        Title = "Discord";
-        Text = "We would appreciate if you joined our discord (Copied)";
-        Duration = 10;
-    })
     loadstring(game:HttpGet(GameTable[game.PlaceId]))()
 end
