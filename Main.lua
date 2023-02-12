@@ -56,7 +56,8 @@ local GameTable = {
     [10605039538] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
     [6537140247] = "https://raw.githubusercontent.com/Robobo2022/script/main/%20Notoriety.lua",
     [2317712696] = "https://raw.githubusercontent.com/Robobo2022/script/main/thewildwest.lua",
-    [2413927524] = "https://raw.githubusercontent.com/Robobo2022/script/main/Rake.lua"
+    [2413927524] = "https://raw.githubusercontent.com/Robobo2022/script/main/Rake.lua",
+    [8908228901] = "https://raw.githubusercontent.com/Robobo2022/script/main/sharkbite2.lua"
 }
 
 
