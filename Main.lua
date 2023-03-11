@@ -9,12 +9,7 @@ end
 local Time = os.clock()
 local ownerId = game.CreatorId
 local Lib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Robobo2022/notify-lib/main/lib'),true))()
-if getgenv().Loaded then    
-    Lib.prompt('Hydra Network v4', 'Hydra Network v4 has already been executed', 2)
-    return
-end
 
-getgenv().Loaded = true
 game.Players.PlayerAdded:Connect(function(player)
     if player.UserId == ownerId then
         Lib.prompt('Hydra Network v4', 'Owned Joined the game', 2)
