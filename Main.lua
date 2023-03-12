@@ -30,8 +30,8 @@ local games = ({
 if games then
     Lib.prompt('Game is supported, and is now executing ' .. games, 2)
     print("Time taken: " .. os.clock() - Time)
-    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Robobo2022/script/blob/main/Games/" .. games))()
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Robobo2022/script/main/Games/" .. games))()
 else
     Lib.prompt('Hydra Network v4', 'Game is not supported, and is now executing universal', 2)
-    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Robobo2022/script/blob/Games/Universal.lua", true))();
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Robobo2022/script/Games/Universal.lua", true))();
 end 
