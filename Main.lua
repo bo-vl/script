@@ -24,11 +24,11 @@ local games = ({
     [10530697691] = "EVADE.lua",
     [10530697691] = "EVADE.lua",
     [10324346056] = "EVADE.lua",
-    [10808838353] = "EVADE.lua"
+    [10808838353] = "EVADE.lua",
 })[game.PlaceId]
 
 if games then
-    Lib.prompt('Game is supported, and is now executing ' .. games, 2)
+    Lib.prompt('Game is supported, and is now executing', "" .. games, 2)
     print("Time taken: " .. os.clock() - Time)
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Robobo2022/script/main/Games/" .. games))()
 else
