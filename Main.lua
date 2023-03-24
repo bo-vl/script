@@ -25,6 +25,7 @@ local games = ({
     [10530697691] = "EVADE.lua",
     [10324346056] = "EVADE.lua",
     [10808838353] = "EVADE.lua",
+    [445664957] = "Parkour.lua",
 })[game.PlaceId]
 
 if games then
