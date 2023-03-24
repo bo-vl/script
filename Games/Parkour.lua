@@ -53,8 +53,8 @@ do
         return hook(self, unpack(args))
     end))
     
-    local function onCharacterAdded(char)
-        if (not char) then
+    local function onCharacterAdded(Character)
+        if (not Character) then
             return
         end
         wait(1)
