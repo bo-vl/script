@@ -1,10 +1,3 @@
-for _, v in pairs(getconnections(game:GetService("ScriptContext").Error)) do
-    v:Disable()
-end
-
-for _, v in pairs(getconnections(game:GetService("LogService").MessageOut)) do
-    v:Disable()
-end
 
 local Request = (syn and syn.request or request or http and http.request or http_request) or error("No request function")
 local plrs = game:GetService('Players')
@@ -31,7 +24,6 @@ getgenv().PlayerInsideFovOutline = Color3.fromRGB(234, 154, 154)
 getgenv().PlayerInsideFovColor = Color3.fromRGB(234, 154, 154)
 getgenv().DeadZoneColor = Color3.fromRGB(0, 0, 0)
 getgenv().FovColor = Color3.fromRGB(255, 255, 255)
-getgenv().BoxTransparency = 0
 getgenv().BoxFilled = false
 getgenv().VisableCheckEsp = false
 getgenv().PlayerInsideFovToggle = false
@@ -280,13 +272,11 @@ for _,v in pairs(plrs:GetChildren()) do
     boxoutline.Visible = false
     boxoutline.Color = Color3.fromRGB(0, 0, 0)
     boxoutline.Thickness = 2
-    boxoutline.Transparency = getgenv().BoxTransparency
     boxoutline.Filled = getgenv().BoxFilled
 
     box.Visible = false
     box.Color = Color3.fromRGB(43, 42, 42)
     box.Thickness = 1
-    box.transparency = getgenv().BoxTransparency
     box.Filled = getgenv().BoxFilled
     function boxesp()
         game:GetService("RunService").RenderStepped:Connect(function()
@@ -355,13 +345,11 @@ plrs.PlayerAdded:Connect(function(v)
     boxoutline.Visible = false
     boxoutline.Color = Color3.fromRGB(0, 0, 0)
     boxoutline.Thickness = 2
-    boxoutline.Transparency = getgenv().BoxTransparency
     boxoutline.Filled = getgenv().BoxFilled
 
     box.Visible = false
     box.Color = Color3.fromRGB(43, 42, 42)
     box.Thickness = 1
-    box.transparency = getgenv().BoxTransparency
     box.Filled = getgenv().BoxFilled
 
     function boxesp()
@@ -583,19 +571,6 @@ ColorSettings:AddLabel('Player Inside Fov Color Color'):AddColorPicker('ColorPic
 
     Callback = function(Value)
         getgenv().PlayerInsideFovColor = Value
-    end
-})
-
-ColorSettings:AddSlider('Trans', {
-    Text = 'Box Transparency',
-    Default = 0,
-    Min = 0,
-    Max = 1,
-    Rounding = 1,
-    Compact = false,
-
-    Callback = function(Value)
-        getgenv().BoxTransparency = Value
     end
 })
 
