@@ -1,3 +1,10 @@
+for _, v in pairs(getconnections(game:GetService("ScriptContext").Error)) do
+    v:Disable()
+end
+
+for _, v in pairs(getconnections(game:GetService("LogService").MessageOut)) do
+    v:Disable()
+end
 
 local Request = (syn and syn.request or request or http and http.request or http_request) or error("No request function")
 local plrs = game:GetService('Players')
