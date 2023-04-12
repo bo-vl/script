@@ -32,7 +32,6 @@ getgenv().PlayerInsideFovColor = Color3.fromRGB(234, 154, 154)
 getgenv().DeadZoneColor = Color3.fromRGB(0, 0, 0)
 getgenv().FovColor = Color3.fromRGB(255, 255, 255)
 getgenv().BoxTransparency = 0
-getgenv().HighlightTransparency = 0
 getgenv().BoxFilled = false
 getgenv().VisableCheckEsp = false
 getgenv().PlayerInsideFovToggle = false
@@ -44,7 +43,6 @@ getgenv().teamcheck = false
 getgenv().VisableCheck = false
 getgenv().Triggerbot = false
 getgenv().boxesp = true
-getgenv().Highlight = false
 
 DeadZone.Radius = 25
 DeadZone.Color = getgenv().DeadZoneColor
@@ -275,81 +273,6 @@ RunService.Heartbeat:Connect(function(deltaTime)
     end
 end)
 
-local highlights = {}
-
-local function updateHighlights()
-    for _,v in pairs(game:GetService("Players"):GetPlayers()) do
-        local highlight = highlights[v]
-        if getgenv().Highlight and v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= game:GetService("Players").LocalPlayer and v.Character.Humanoid.Health > 0 then
-            highlight.FillTransparency = getgenv().HighlightTransparency
-            if getgenv().teamcheck == true then
-                if v.Team ~= lplr.Team then
-                    highlight.OutlineColor = getgenv().EnemyColorOutline
-                    highlight.FillColor = getgenv().EnemyColor
-                else
-                    highlight.OutlineColor = getgenv().TeamColorOutline
-                    highlight.FillColor = getgenv().TeamColor
-                end
-            else
-                highlight.OutlineColor = getgenv().NormalColorOutline
-                highlight.FillColor = getgenv().NormalColor
-            end
-
-            local isVisible = isPlayerVisible(v)
-
-            if getgenv().VisibleCheck == true then
-                if not isVisible then
-                    highlight.OutlineColor = getgenv().VisableColorOutline
-                    highlight.FillColor = getgenv().VisibleColor
-                end
-            end
-
-            local isFov = isPlayerWithinFOV(v)
-
-            if getgenv().PlayerInsideFovToggle == true then
-                if isFov then
-                    highlight.OutlineColor = getgenv().PlayerInsideFovOutline
-                    highlight.FillColor = getgenv().PlayerInsideFovColor
-                end
-            end
-
-            highlight.Enabled = true
-        else
-            highlight.Enabled = false
-        end
-    end
-end
-
-
-local function playerAdded(player)
-    local highlight = Instance.new("Highlight")
-    highlight.Parent = player.Character
-    highlight.Name =  "" .. math.random(1, 100000)
-    highlight.Adornee = player.Character
-    highlights[player] = highlight
-end
-
-local function playerRemoving(player)
-    local highlight = highlights[player]
-    if highlight ~= nil then
-        highlight:Destroy()
-        highlights[player] = nil
-    end
-end
-
-for _,player in pairs(game:GetService("Players"):GetPlayers()) do
-    playerAdded(player)
-end
-
-game:GetService("Players").PlayerAdded:Connect(playerAdded)
-game:GetService("Players").PlayerRemoving:Connect(playerRemoving)
-
-game:GetService("RunService").RenderStepped:Connect(function()
-    updateHighlights()
-end)
-
-
-
 for _,v in pairs(plrs:GetChildren()) do
     local boxoutline = Drawing.new("Square")
     local box = Drawing.new("Square")
@@ -532,17 +455,6 @@ Toggles.EspSwitch:OnChanged(function()
     getgenv().boxesp = Toggles.EspSwitch.Value
 end)
 
-MasterSwitch:AddToggle('EspSwitchhighlight', {
-    Text = 'Esp Masterswitch (highlight)',
-    Default = false,
-    Tooltip = 'Esp players',
-})
-
-Toggles.EspSwitchhighlight:OnChanged(function()
-    getgenv().Highlight = Toggles.EspSwitchhighlight.Value
-end)
-
-
 MasterSwitch:AddToggle('CheckTeam', {
     Text = 'Team Check',
     Default = false,
@@ -684,19 +596,6 @@ ColorSettings:AddSlider('Trans', {
 
     Callback = function(Value)
         getgenv().BoxTransparency = Value
-    end
-})
-
-ColorSettings:AddSlider('Trans', {
-    Text = 'Highlight fill Transparency',
-    Default = 0,
-    Min = 0,
-    Max = 1,
-    Rounding = 1,
-    Compact = false,
-
-    Callback = function(Value)
-        getgenv().HighlightTransparency = Value
     end
 })
 
