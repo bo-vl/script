@@ -67,7 +67,6 @@ do
 end
 
 local Settings = {
-    autofarm = false,
     autocombo = false,
     combolvl = 1,
     Nofall = false,
@@ -80,7 +79,6 @@ local Settings = {
     reset = false,
     resetvalue = 10000,
     flow = false,
-    stimeject = false,
     autoquest = false,
     infglidestamina = false,
     infmagrail = false,
