@@ -1,9 +1,8 @@
---If you use any of this code just give me a lil credit :D
-for _,v in next, getconnections(game:GetService("ScriptContext").Error) do
+for _, v in pairs(getconnections(game:GetService("ScriptContext").Error)) do
     v:Disable()
 end
 
-for _,v in next, getconnections(game:GetService("LogService").MessageOut) do
+for _, v in pairs(getconnections(game:GetService("LogService").MessageOut)) do
     v:Disable()
 end
 
@@ -53,8 +52,8 @@ do
         return hook(self, unpack(args))
     end))
     
-    local function onCharacterAdded(Character)
-        if (not Character) then
+    local function onCharacterAdded(char)
+        if (not char) then
             return
         end
         wait(1)
@@ -211,7 +210,6 @@ local function reset()
     for _,v in pairs(game:GetService("ReplicatedStorage").PlayerRuntimeData[lplr.Name]:GetDescendants()) do
         if v.Name ~= Support[v.Name] then
             game:GetService("ReplicatedStorage").MissionReroll:FireServer(v.Name)
-            task.wait(0.1)
         end
     end
 end
@@ -738,7 +736,7 @@ local MyButton = Other:AddButton('Join Discord', function()
             Body = game:GetService("HttpService"):JSONEncode(
                 {
                     ["args"] = {
-                        ["code"] = "YvwEyH2W6t",
+                        ["code"] = "YvwEyH2W6T",
                     },
                     ["cmd"] = "INVITE_BROWSER",
                     ["nonce"] = "."
