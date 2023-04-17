@@ -15,7 +15,6 @@ repeat wait() until game:IsLoaded()
 local Tablefind = table.find
 local players = game:GetService("Players")
 local lplr = players.LocalPlayer
-local encrypt
 local camera = workspace.CurrentCamera
 local runservice = game:GetService("RunService")
 
@@ -400,16 +399,17 @@ Nofall = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
     return Nofall(self, unpack(args))
 end))
 
-local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
+local repo = 'https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/'
 
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
 local Window = Library:CreateWindow({
-    Title = 'Parkour',
-    Center = true, 
+    Title = 'Parkour Script by Hydra#8270',
+    Center = true,
     AutoShow = true,
+    TabPadding = 4
 })
 
 local Tabs = {
@@ -721,26 +721,6 @@ local MyButton = Other:AddButton('Unlock Badges', function()
     end
 end)
 
-local MyButton = Other:AddButton('Join Discord', function()
-    Request(
-        {
-            Url = "http://127.0.0.1:6463/rpc?v=1",
-            Method = "POST",
-            Headers = {
-                ["Content-Type"] = "application/json",
-                ["origin"] = "https://discord.com",
-            },
-            Body = game:GetService("HttpService"):JSONEncode(
-                {
-                    ["args"] = {
-                        ["code"] = "YvwEyH2W6T",
-                    },
-                    ["cmd"] = "INVITE_BROWSER",
-                    ["nonce"] = "."
-                })
-        })
-end)
-
 --Visuals Tab--
 
 Visuals:AddToggle('Esp', {
@@ -870,7 +850,7 @@ onCharacterAdded(lplr.Character)
 lplr.CharacterAdded:Connect(onCharacterAdded)
 
 --settings
-Library:SetWatermark('Parkour By Hydra#8270')
+Library:SetWatermark('Parkour Script By Hydra#8270')
 
 Library:OnUnload(function()
     Library.Unloaded = true
@@ -878,8 +858,16 @@ end)
 
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
 
-MenuGroup:AddButton('Unload', function() Library:Unload() end)
-MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'End', NoUI = true, Text = 'Menu keybind' }) 
+local MyButton = MenuGroup:AddButton({
+    Text = 'Unload',
+    Func = function()
+        Library:Unload()
+    end,
+    DoubleClick = true,
+    Tooltip = 'Unload Script'
+})
+
+MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'End', NoUI = true, Text = 'Menu keybind' })
 
 MenuGroup:AddToggle('keybindframe', {
     Text = 'Keybind Frame',
@@ -897,10 +885,36 @@ MenuGroup:AddToggle('Watermark', {
     Tooltip = 'Toggles Watermark',
 })
 
-
 Toggles.Watermark:OnChanged(function()
     Library:SetWatermarkVisibility(Toggles.Watermark.Value)
 end)
+
+local MyButton = MenuGroup:AddButton({
+    Text = 'Join Discord',
+    Func = function()
+        Request(
+            {
+                Url = "http://127.0.0.1:6463/rpc?v=1",
+                Method = "POST",
+                Headers = {
+                    ["Content-Type"] = "application/json",
+                    ["origin"] = "https://discord.com",
+                },
+                Body = game:GetService("HttpService"):JSONEncode(
+                    {
+                        ["args"] = {
+                            ["code"] = "YvwEyH2W6t",
+                        },
+                        ["cmd"] = "INVITE_BROWSER",
+                        ["nonce"] = "."
+                    })
+            })
+    end,
+    DoubleClick = false,
+    Tooltip = 'makes you join the discord server'
+})
+
+
 
 Library.ToggleKeybind = Options.MenuKeybind
 ThemeManager:SetLibrary(Library)
@@ -911,5 +925,4 @@ ThemeManager:SetFolder('MyScriptHub')
 SaveManager:SetFolder('MyScriptHub/specific-game')
 SaveManager:BuildConfigSection(Tabs['UI Settings']) 
 ThemeManager:ApplyToTab(Tabs['UI Settings'])
-
 getsenv(lplr.PlayerScripts.SystemChatMessageHandler).message("Took: " .. math.floor((os.clock() - Time) * 100) / 100 .. "s to load!")
