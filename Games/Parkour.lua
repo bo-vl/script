@@ -210,6 +210,7 @@ local function reset()
     for _,v in pairs(game:GetService("ReplicatedStorage").PlayerRuntimeData[lplr.Name]:GetDescendants()) do
         if v.Name ~= Support[v.Name] then
             game:GetService("ReplicatedStorage").MissionReroll:FireServer(v.Name)
+            wait()
         end
     end
 end
