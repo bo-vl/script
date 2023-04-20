@@ -132,8 +132,6 @@ local function isPlayerVisible(player)
     end
 end
 
-
-
 local function getPlayersWithinFOV()
     local playersWithinFOV = {}
     local players = game:GetService("Players"):GetPlayers()
@@ -193,7 +191,7 @@ local function updateDeadZonePosition()
             for _, player in ipairs(playersWithinFOV) do
                 if player ~= lplr and player.Team ~= lplr.Team then
                     closestPlayer = closestPlayer or player
-                    if player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
+                    if player.Character and player.Character:FindFirstChildOfClass("Humanoid") and player.Character ~= nil then
                         closestPlayer = player
                         break
                     end
@@ -238,9 +236,9 @@ local function updateDeadZonePosition()
                             end
                             
                             if isPlayerVisibleToggle(closestPlayer) then
-                                vu:Button1Down(Vector2.new())
+                                vu:Button1Down(mousePos)
                                 wait()
-                                vu:Button1Up(Vector2.new())
+                                vu:Button1Up(mousePos)
                             end
                         end
                         
@@ -251,7 +249,6 @@ local function updateDeadZonePosition()
             end
         end
     end
-    
     DeadZone.Position = DeadZone.Position:Lerp(Fov.Position, 0.5)
 end
 
