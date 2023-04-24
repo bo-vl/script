@@ -14,7 +14,6 @@ local camera = workspace.CurrentCamera
 local Fov = Drawing.new("Circle")
 local DeadZone = Drawing.new("Circle")
 local RunService = game:GetService("RunService")
-local vu = game:GetService("VirtualUser")
 local WorldToViewportPoint = camera.WorldToViewportPoint
 local headoff = Vector3.new(0, 0.5, 0)
 local legoff = Vector3.new(0, 3, 0)
@@ -236,9 +235,9 @@ local function updateDeadZonePosition()
                             end
                             
                             if isPlayerVisibleToggle(closestPlayer) then
-                                vu:Button1Down(mousePos)
+                                mouse1click()
                                 wait()
-                                vu:Button1Up(mousePos)
+                                mouse1click()
                             end
                         end
                         
