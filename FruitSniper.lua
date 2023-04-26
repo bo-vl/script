@@ -1,15 +1,11 @@
-
---change whatever you want (i know its not the best way to do it but i did it my way (: )
 repeat wait() until game:IsLoaded()
 local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+local Util = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robobo2022/Util/main/Load.lua"))()
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam", "Pirates")
 wait(1)
 
 local lplr = game:GetService("Players").LocalPlayer
-local lcharacter = lplr.Character
-local TweenService = game:GetService("TweenService")
-_G.TweenSpeed = 10
-local TweenInfo = TweenInfo.new(_G.TweenSpeed, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0)
+local duration = 2
 local FruitName
 local FruitFound = false
 local FruitStored = false
@@ -114,15 +110,9 @@ local function findfruit()
     for _,v in pairs(Fruits) do
         if game:GetService("Workspace"):FindFirstChild(v) then
             print("Fruit Found: " .. v)
+            local endPosition = game:GetService("Workspace")[v].Handle.CFrame
             FruitName = v
-            local tween = TweenService:Create(lcharacter.HumanoidRootPart, TweenInfo, {CFrame = game:GetService("Workspace")[v].Fruit.CFrame})
-            tween:Play()
-            tween.Completed:Connect(function()
-                Store()
-                if FruitStored == true then
-                    hopServer()
-                end
-            end)
+            Util.CTween:go(lplr, endPosition, duration)
             return true
         end
     end
@@ -130,7 +120,13 @@ local function findfruit()
     return false
 end
 
-if findfruit() == false then
+if findfruit() == true then
+    wait(duration)
+    Store()
+    if FruitStored == true then
+        hopServer()
+    end
+else
     NotFound(FruitFound)
 end
 
