@@ -701,15 +701,6 @@ end)
 
 --Misc tab--
 
-local MyButton = Other:AddButton('Unlock all spawns', function()
-    for _,v in pairs(game:GetService("Workspace"):GetChildren()) do
-        if v.ClassName == "SpawnLocation" then
-            lplr.Character.HumanoidRootPart.CFrame = v.CFrame + 1.5
-            wait(1)
-        end
-    end
-end)
-
 local MyButton = Other:AddButton('Unlock Badges', function()
     for _, v in next, workspace:GetChildren() do
         if (v.Name ~= "BadgeAwarder" or not lplr.Character) then continue end
