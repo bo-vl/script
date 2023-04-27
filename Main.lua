@@ -34,6 +34,6 @@ if games then
     print("Time taken: " .. os.clock() - Time)
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Robobo2022/script/main/Games/" .. games))()
 else
-    Lib.prompt('Hydra Network v4', 'Game is not supported, and is now executing universal', 2)
+    Lib.prompt('Hydra Network v2', 'Game is not supported, and is now executing universal', 2)
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Robobo2022/script/main/Universal.lua", true))();
 end 
