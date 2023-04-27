@@ -35,5 +35,5 @@ if games then
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Robobo2022/script/main/Games/" .. games))()
 else
     Lib.prompt('Hydra Network v4', 'Game is not supported, and is now executing universal', 2)
-    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Robobo2022/script/Games/Universal.lua", true))();
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Robobo2022/script/main/Universal.lua", true))();
 end 
