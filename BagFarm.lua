@@ -1,5 +1,6 @@
 local getupvalue = (getupvalue or debug.getupvalue)
 local hookmetamethod = hookmetamethod or function(tbl, mt, func) return hookfunction(getrawmetatable(tbl)[mt], func) end
+local Request = (syn and syn.request or request or http and http.request or http_request) or error("No request function")
 local Util = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robobo2022/Util/main/Load.lua"))()
 
 repeat wait() until game:IsLoaded()
@@ -7,6 +8,8 @@ local Tablefind = table.find
 local MinimumTime = 0.3
 local players = game:GetService("Players")
 local lplr = players.LocalPlayer
+local camera = workspace.CurrentCamera
+local runservice = game:GetService("RunService")
 
 local Nofall
 Nofall = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
@@ -66,7 +69,7 @@ do
     lplr.CharacterAdded:Connect(onCharacterAdded)
 end
 
-local Bags = {"Uncommon", "Common"}
+local Bags = {"Uncommon", "Common", "Rare", "Epic", "Legendary", "Ultimate", "Resplendent"}
 
 local Distance = function()
     local Closest = nil
