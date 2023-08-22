@@ -342,6 +342,7 @@ for _,v in pairs(plrs:GetChildren()) do
     coroutine.wrap(boxesp)()
 end
 
+
 plrs.PlayerAdded:Connect(function(v)
     local boxoutline = Drawing.new("Square")
     local box = Drawing.new("Square")
@@ -355,8 +356,18 @@ plrs.PlayerAdded:Connect(function(v)
     box.Color = Color3.fromRGB(43, 42, 42)
     box.Thickness = 1
     box.Filled = getgenv().BoxFilled
+        
+    function highlightEsp()
+       local players = game:GetService("Players"):GetPlayers()
+       players.PlayerAdded:Connect(function(plr)
+            local char = plr.Character
+            local highlight = Instance.new("Highlight", char) -- Puts a highlight around the character model
+            highlight.OutlineColor = NormalColor
+            highlight.FillTransparency = 1 -- Makes the fill of the highlight transparent
+        end)
+    end
 
-    function boxesp()
+    function boxesp() -- why is this defined twice
         game:GetService("RunService").RenderStepped:Connect(function()
             if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lplr and v.Character.Humanoid.Health > 0 and getgenv().boxesp == true then
                 if getgenv().teamcheck == true then
